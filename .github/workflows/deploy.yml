@@ -1,4 +1,4 @@
-# .github/workflows/deploy.yml
+# .github/workflows/deploy.yml (VERSI ANTI-CACHE)
 
 name: Deploy to GitHub Pages
 
@@ -6,6 +6,11 @@ on:
   push:
     branches:
       - main
+
+# Opsi tambahan: Kalo ada push baru, batalin deploy yang lama. Biar hemat waktu.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -15,7 +20,6 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -24,7 +28,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          # Bagian ini yang bakal "maksa" refresh cache setiap kali ada perubahan
           cache: 'npm'
+          cache-dependency-path: package-lock.json
 
       - name: Install Dependencies 📦
         run: npm install
@@ -32,12 +38,8 @@ jobs:
       - name: Build Project 🔨
         run: npm run build
 
-      # 👇 PERUBAHANNYA DI SINI 👇
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v5
-        with:
-          # Baris ini akan otomatis mengaktifkan GitHub Pages untuk lu
-          enablement: true
 
       - name: Upload artifact 🚀
         uses: actions/upload-pages-artifact@v3
