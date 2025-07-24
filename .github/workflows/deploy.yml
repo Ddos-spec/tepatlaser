@@ -1,0 +1,54 @@
+# .github/workflows/deploy.yml
+
+name: Deploy to GitHub Pages
+
+# Pemicu: Action ini akan jalan setiap kali ada 'push' ke branch 'main'
+on:
+  push:
+    branches:
+      - main # Ganti jadi 'master' kalo nama branch utama lu master
+
+# Izin untuk si Actions biar bisa nulis ke branch gh-pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Jalan di environment Linux terbaru
+
+    steps:
+      # Langkah 1: Download kode dari repo lu
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      # Langkah 2: Siapin Node.js buat nge-build
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Pakai versi Node.js LTS
+          cache: 'npm'
+
+      # Langkah 3: Install semua dependency dari package.json
+      - name: Install Dependencies 📦
+        run: npm install
+
+      # Langkah 4: Build project lu. Vite akan bikin folder 'dist'
+      - name: Build Project 🔨
+        run: npm run build
+
+      # Langkah 5: Setup GitHub Pages
+      - name: Setup Pages ⚙️
+        uses: actions/configure-pages@v5
+
+      # Langkah 6: Upload hasil build (dari folder 'dist') sebagai artifact
+      - name: Upload artifact 🚀
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Folder hasil build Vite
+
+      # Langkah 7: Deploy artifact tadi ke GitHub Pages!
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
