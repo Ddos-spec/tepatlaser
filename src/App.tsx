@@ -1,3 +1,5 @@
+// src/App.tsx (VERSI FINAL YANG SUDAH DIPERBAIKI)
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,7 +16,8 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    // Penambahan `basename` ini yang bakal benerin semua link di website lu
+    <Router basename="/tepatlaser">
       <div className="min-h-screen bg-white">
         <Navbar />
         <main className="pt-16">
