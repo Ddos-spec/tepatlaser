@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col items-center py-3">
           {/* Logo di tengah atas */}
           <Link to="/" className="flex items-center space-x-2 mb-2">
-            <img src="/Logo.webp" alt="TepatLaser Logo" className="h-9 w-auto" />
+            <img src="Logo.webp" alt="TepatLaser Logo" className="h-9 w-auto" />
             <span className="text-2xl font-bold text-gradient">TepatLaser</span>
           </Link>
           {/* Menu di bawah logo, bisa wrap kalo ga muat */}

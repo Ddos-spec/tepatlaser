@@ -12,7 +12,7 @@ const products = [
     // SEO: Alt text yang deskriptif untuk setiap gambar
   {
     title: 'Signage MDF Premium',
-    image: '/produk1.webp',
+    image: 'produk1.webp',
     description: 'Papan nama toko dari bahan MDF yang dipotong presisi menggunakan teknologi CNC Router canggih, menghasilkan detail yang tajam dan finishing halus.',
     machine: 'CNC Router',
     category: 'Signage',
@@ -20,7 +20,7 @@ const products = [
   },
   {
     title: 'Display Acrylic Modern',
-    image: '/produk2.webp',
+    image: 'produk2.webp',
     description: 'Display produk modern dari bahan acrylic bening, dipotong dengan laser CO₂ untuk tepian yang mengkilap dan bebas dari bekas pemotongan.',
     machine: 'CNC Laser CO₂',
     category: 'Display',
@@ -28,7 +28,7 @@ const products = [
   },
   {
     title: 'Panel ACP Fasad',
-    image: '/produk3.webp',
+    image: 'produk3.webp',
     description: 'Panel fasad untuk eksterior gedung dari material ACP (Aluminium Composite Panel), dipotong dengan laser fiber untuk presisi industrial grade.',
     machine: 'CNC Laser Fiber',
     category: 'Arsitektur',
@@ -36,7 +36,7 @@ const products = [
   },
   {
     title: 'Trophy Acrylic Custom',
-    image: '/produk1.webp', 
+    image: 'produk1.webp', 
     description: 'Trophy atau plakat penghargaan dari acrylic yang dipersonalisasi dengan teknik engraving laser Galvo, menghasilkan tulisan dan logo yang sangat detail.',
     machine: 'Galvo 30W',
     category: 'Trophy',
@@ -44,7 +44,7 @@ const products = [
   },
   {
     title: 'Furniture Components',
-    image: '/produk2.webp',
+    image: 'produk2.webp',
     description: 'Komponen-komponen furniture seperti panel dekoratif atau partisi ruangan yang dipotong custom dari material kayu olahan dengan CNC Router.',
     machine: 'CNC Router',
     category: 'Furniture',
@@ -52,7 +52,7 @@ const products = [
   },
   {
     title: 'Industrial Marking',
-    image: '/produk3.webp',
+    image: 'produk3.webp',
     description: 'Penandaan (marking) permanen pada komponen industri berbahan metal menggunakan laser engraving Galvo untuk nomor seri atau kode produksi.',
     machine: 'Galvo 30W',
     category: 'Industrial',
@@ -60,7 +60,7 @@ const products = [
   },
   {
     title: 'PVC Signboard',
-    image: '/produk1.webp',
+    image: 'produk1.webp',
     description: 'Papan reklame atau petunjuk arah dari material PVC yang ringan dan tahan cuaca, dipotong dengan laser CO₂ untuk hasil yang bersih dan presisi.',
     machine: 'CNC Laser CO₂',
     category: 'Signage',
@@ -68,7 +68,7 @@ const products = [
   },
   {
     title: 'Metal Name Tag',
-    image: '/produk2.webp',
+    image: 'produk2.webp',
     description: 'Name tag atau papan nama meja dari stainless steel yang dipotong menggunakan laser fiber, memberikan kesan premium dan presisi.',
     machine: 'CNC Laser Fiber',
     category: 'Corporate',
@@ -76,7 +76,7 @@ const products = [
   },
   {
     title: 'Decorative Panel',
-    image: '/produk3.webp',
+    image: 'produk3.webp',
     description: 'Panel dekoratif untuk interior maupun eksterior dengan pattern atau pola rumit yang dipotong sempurna menggunakan CNC Router.',
     machine: 'CNC Router',
     category: 'Dekorasi',

@@ -106,7 +106,7 @@ const GalvoEngraving: React.FC = () => {
             <div className="lg:pl-12">
               {/* GAMBAR MESIN BARU + OPTIMASI */}
               <img 
-                src="/galvo.webp" 
+                src="galvo.webp" 
                 alt="Mesin Galvo Engraving TepatLaser"
                 className="rounded-2xl shadow-2xl"
                 loading="lazy"

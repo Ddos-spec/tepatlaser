@@ -97,7 +97,7 @@ const CNCLaserCO2: React.FC = () => {
             <div className="lg:pl-12">
               {/* GAMBAR MESIN BARU + OPTIMASI */}
               <img 
-                src="/co2.webp" 
+                src="co2.webp" 
                 alt="Mesin CNC Laser CO₂ TepatLaser"
                 className="rounded-2xl shadow-2xl"
                 loading="lazy"

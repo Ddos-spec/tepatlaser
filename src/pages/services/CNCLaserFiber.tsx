@@ -97,7 +97,7 @@ const CNCLaserFiber: React.FC = () => {
             <div className="lg:pl-12">
               {/* GAMBAR MESIN BARU + OPTIMASI */}
               <img 
-                src="/fibermetal.webp" 
+                src="fibermetal.webp" 
                 alt="Mesin CNC Laser Fiber Metal TepatLaser"
                 className="rounded-2xl shadow-2xl"
                 loading="lazy"

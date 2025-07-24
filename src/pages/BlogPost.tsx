@@ -10,7 +10,7 @@ import { Calendar, User, ArrowLeft, ArrowRight, Tag } from 'lucide-react';
 const blogPosts: Record<string, any> = {
   'cara-memilih-jasa-laser-engraving-mdf': {
     title: 'Cara Memilih Jasa Laser Engraving MDF yang Tepat',
-    image: '/produk1.webp',
+    image: 'produk1.webp',
     alt: 'Contoh hasil laser engraving detail pada material MDF.',
     category: 'Tips & Trik',
     date: '15 Januari 2024',
@@ -43,7 +43,7 @@ const blogPosts: Record<string, any> = {
   },
   'tips-cutting-pvc-dengan-laser-co2': {
     title: 'Tips Cutting PVC dengan Laser CO₂ untuk Hasil Maksimal',
-    image: '/produk2.webp',
+    image: 'produk2.webp',
     alt: 'Huruf dari bahan PVC hasil potongan rapi menggunakan mesin laser CO₂.',
     category: 'Tips & Trik',
     date: '12 Januari 2024',
@@ -77,7 +77,7 @@ const blogPosts: Record<string, any> = {
   // --- Data lain ditambahkan agar link dari halaman Blog tidak error ---
   'panduan-cutting-acp-dengan-laser-fiber': {
     title: 'Panduan Cutting ACP dengan Laser Fiber Metal',
-    image: '/produk3.webp',
+    image: 'produk3.webp',
     alt: 'Panel ACP dengan pola rumit yang dipotong presisi oleh laser fiber.',
     category: 'Tips & Trik',
     date: '10 Januari 2024',
@@ -87,7 +87,7 @@ const blogPosts: Record<string, any> = {
   },
   'free-design-konsultasi-signage-acrylic': {
     title: 'Free Design & Konsultasi untuk Signage Acrylic Anda',
-    image: '/produk1.webp',
+    image: 'produk1.webp',
     alt: 'Contoh signage modern dari bahan acrylic bening.',
     category: 'Free Service',
     date: '8 Januari 2024',
@@ -97,7 +97,7 @@ const blogPosts: Record<string, any> = {
   },
   'showcase-trophy-custom-galvo-engraving': {
     title: 'Showcase: Trophy Custom dengan Galvo Engraving',
-    image: '/produk2.webp',
+    image: 'produk2.webp',
     alt: 'Trophy custom dengan detail grafir yang sangat presisi.',
     category: 'Showcase',
     date: '5 Januari 2024',
@@ -107,7 +107,7 @@ const blogPosts: Record<string, any> = {
   },
     'free-konsultasi-furniture-components-mdf': {
     title: 'Free Konsultasi: Furniture Components dari MDF',
-    image: '/produk3.webp',
+    image: 'produk3.webp',
     alt: 'Komponen furniture dari MDF yang siap dirakit.',
     category: 'Free Service',
     date: '3 Januari 2024',

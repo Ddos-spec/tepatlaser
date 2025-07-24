@@ -97,7 +97,7 @@ const CNCRouter: React.FC = () => {
             <div className="lg:pl-12">
               {/* GAMBAR MESIN BARU + OPTIMASI */}
               <img 
-                src="/cnc.webp" 
+                src="cnc.webp" 
                 alt="Mesin CNC Router TepatLaser"
                 className="rounded-2xl shadow-2xl"
                 loading="lazy"

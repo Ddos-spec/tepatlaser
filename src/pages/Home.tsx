@@ -17,7 +17,7 @@ const features = [
 const materials = [
   {
     name: 'MDF',
-    image: '/mdf.webp',
+    image: 'mdf.webp',
     problems: 'Sering mengalami masalah presisi potong yang tidak akurat, waktu pengerjaan yang lama karena proses manual, dan komunikasi yang buruk dengan penyedia jasa yang membuat proyek terhambat.',
     solution: 'TepatLaser menggunakan teknologi CNC Router canggih yang memberikan presisi potong hingga 0.1mm untuk material MDF. Tim profesional kami menyelesaikan proyek dengan cepat dan selalu memberikan update progress secara real-time kepada klien.',
     link: '/jasa/cnc-router',
@@ -25,7 +25,7 @@ const materials = [
   },
   {
     name: 'GRC',
-    image: '/grc.webp',
+    image: 'grc.webp',
     problems: 'Material GRC membutuhkan penanganan khusus yang sering diabaikan penyedia jasa umum, mengakibatkan hasil potong kasar, retak, dan tidak sesuai spesifikasi yang diminta klien.',
     solution: 'Dengan pengalaman bertahun-tahun menangani GRC, TepatLaser menggunakan teknik cutting khusus dan parameter yang tepat untuk menghasilkan potongan GRC yang halus, presisi, dan tahan lama sesuai standar industri konstruksi.',
     link: '/jasa/cnc-router',
@@ -33,7 +33,7 @@ const materials = [
   },
   {
     name: 'PVC',
-    image: '/pvc.webp',
+    image: 'pvc.webp',
     problems: 'Pemotongan PVC konvensional sering menghasilkan tepi yang meleleh, tidak rata, dan membutuhkan finishing tambahan yang menambah biaya dan waktu pengerjaan proyek.',
     solution: 'TepatLaser menggunakan teknologi laser CO₂ dengan parameter suhu dan kecepatan yang optimal untuk PVC, menghasilkan potongan yang bersih tanpa leleh, tepi yang halus, dan siap pakai tanpa finishing tambahan.',
     link: '/jasa/cnc-laser-co2',
@@ -41,7 +41,7 @@ const materials = [
   },
   {
     name: 'ACP',
-    image: '/acp.webp',
+    image: 'acp.webp',
     problems: 'Cutting ACP manual berisiko merusak lapisan aluminium dan core material, mengakibatkan hasil yang tidak presisi, bergelombang, dan rentan terhadap korosi pada bagian yang terpotong.',
     solution: 'Teknologi CNC Laser Fiber Metal TepatLaser memotong ACP dengan presisi tinggi tanpa merusak struktur material, menghasilkan tepi yang seal sempurna dan tahan terhadap cuaca untuk aplikasi eksterior maupun interior.',
     link: '/jasa/cnc-laser-fiber',
@@ -49,7 +49,7 @@ const materials = [
   },
   {
     name: 'Grafir/Engrave',
-    image: '/engraving.webp',
+    image: 'engraving.webp',
     problems: 'Proses engraving manual memakan waktu lama, hasil tidak konsisten antar produk, dan sulit mencapai detail yang kompleks, terutama untuk produksi dalam jumlah besar.',
     solution: 'Mesin Galvo 30W TepatLaser memberikan hasil engraving yang konsisten dan detail hingga resolusi tinggi. Proses otomatis memungkinkan produksi massal dengan kualitas identik dan waktu pengerjaan yang sangat efisien.',
     link: '/jasa/galvo-engraving',
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center text-white section-padding"
-        style={{ backgroundImage: "url('/hero.webp')" }}
+        style={{ backgroundImage: "url('hero.webp')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

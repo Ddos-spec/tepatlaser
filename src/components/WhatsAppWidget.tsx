@@ -16,7 +16,7 @@ const WhatsAppWidget: React.FC = () => {
         aria-label="Chat WhatsApp"
       >
         {/* Mengganti ikon dengan SVG lokal */}
-        <img src="/whatsapp.svg" alt="WhatsApp" className="w-7 h-7" />
+        <img src="whatsapp.svg" alt="WhatsApp" className="w-7 h-7" />
       </button>
     </div>
   );
