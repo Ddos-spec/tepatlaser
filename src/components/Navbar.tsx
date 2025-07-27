@@ -1,16 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ChevronDown, Zap, Settings, Layers, Sparkles } from 'lucide-react';
+import { Home, ChevronDown, Zap, Settings, Layers, Sparkles, Package } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMaterialDropdownOpen, setIsMaterialDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const materialDropdownRef = useRef<HTMLDivElement>(null);
 
   // Efek ini buat nutup semua menu pas pindah halaman
   useEffect(() => {
     setIsDropdownOpen(false);
+    setIsMaterialDropdownOpen(false);
   }, [location.pathname]);
 
   // Efek buat shadow di navbar pas scroll
@@ -26,6 +29,9 @@ const Navbar: React.FC = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
       }
+      if (materialDropdownRef.current && !materialDropdownRef.current.contains(event.target as Node)) {
+        setIsMaterialDropdownOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -36,6 +42,15 @@ const Navbar: React.FC = () => {
     { name: 'Mesin CNC Laser CO₂', path: '/jasa/cnc-laser-co2', icon: Zap },
     { name: 'Mesin CNC Laser Fiber Metal', path: '/jasa/cnc-laser-fiber', icon: Layers },
     { name: 'Mesin Galvo 30W (Laser Engraving)', path: '/jasa/galvo-engraving', icon: Sparkles },
+  ];
+
+  const materials = [
+    { name: 'MDF', path: '/material/mdf' },
+    { name: 'GRC', path: '/material/grc' },
+    { name: 'PVC', path: '/material/pvc' },
+    { name: 'ACP', path: '/material/acp' },
+    { name: 'Stainless Steel', path: '/material/stainless-steel' },
+    { name: 'Plywood', path: '/material/plywood' },
   ];
 
   // Fungsi buat render link menu, sekarang lebih simpel
@@ -80,6 +95,30 @@ const Navbar: React.FC = () => {
         )}
       </div>
 
+      <div className="relative" ref={materialDropdownRef}>
+        <button
+          onClick={() => setIsMaterialDropdownOpen(prev => !prev)}
+          className="flex items-center space-x-1 px-3 py-2 rounded-md transition-colors text-sm text-gray-700 hover:text-orange-500"
+        >
+          <Package className="w-4 h-4" />
+          <span>Material</span>
+          <ChevronDown className={`w-4 h-4 transition-transform ${isMaterialDropdownOpen ? 'rotate-180' : ''}`} />
+        </button>
+        {isMaterialDropdownOpen && (
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-48 bg-white rounded-lg shadow-lg border z-10">
+            {materials.map((material, idx) => (
+              <Link
+                key={idx}
+                to={material.path}
+                className="block px-4 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors first:rounded-t-lg last:rounded-b-lg text-sm"
+              >
+                {material.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+
       <Link
         to="/produk"
         className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors text-sm ${
@@ -111,7 +150,7 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col items-center py-3">
           {/* Logo di tengah atas */}
           <Link to="/" className="flex items-center space-x-2 mb-2">
-            <img src="Logo.webp" alt="TepatLaser Logo" className="h-9 w-auto" />
+            <img src="/Logo.webp" alt="TepatLaser Logo" className="h-9 w-auto" />
             <span className="text-2xl font-bold text-gradient">TepatLaser</span>
           </Link>
           {/* Menu di bawah logo, bisa wrap kalo ga muat */}

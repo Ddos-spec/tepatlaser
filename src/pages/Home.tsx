@@ -17,7 +17,7 @@ const features = [
 const materials = [
   {
     name: 'MDF',
-    image: 'mdf.webp',
+    image: '/mdf.webp',
     problems: 'Sering mengalami masalah presisi potong yang tidak akurat, waktu pengerjaan yang lama karena proses manual, dan komunikasi yang buruk dengan penyedia jasa yang membuat proyek terhambat.',
     solution: 'TepatLaser menggunakan teknologi CNC Router canggih yang memberikan presisi potong hingga 0.1mm untuk material MDF. Tim profesional kami menyelesaikan proyek dengan cepat dan selalu memberikan update progress secara real-time kepada klien.',
     link: '/jasa/cnc-router',
@@ -25,7 +25,7 @@ const materials = [
   },
   {
     name: 'GRC',
-    image: 'grc.webp',
+    image: '/grc.webp',
     problems: 'Material GRC membutuhkan penanganan khusus yang sering diabaikan penyedia jasa umum, mengakibatkan hasil potong kasar, retak, dan tidak sesuai spesifikasi yang diminta klien.',
     solution: 'Dengan pengalaman bertahun-tahun menangani GRC, TepatLaser menggunakan teknik cutting khusus dan parameter yang tepat untuk menghasilkan potongan GRC yang halus, presisi, dan tahan lama sesuai standar industri konstruksi.',
     link: '/jasa/cnc-router',
@@ -33,7 +33,7 @@ const materials = [
   },
   {
     name: 'PVC',
-    image: 'pvc.webp',
+    image: '/pvc.webp',
     problems: 'Pemotongan PVC konvensional sering menghasilkan tepi yang meleleh, tidak rata, dan membutuhkan finishing tambahan yang menambah biaya dan waktu pengerjaan proyek.',
     solution: 'TepatLaser menggunakan teknologi laser CO₂ dengan parameter suhu dan kecepatan yang optimal untuk PVC, menghasilkan potongan yang bersih tanpa leleh, tepi yang halus, dan siap pakai tanpa finishing tambahan.',
     link: '/jasa/cnc-laser-co2',
@@ -41,15 +41,31 @@ const materials = [
   },
   {
     name: 'ACP',
-    image: 'acp.webp',
+    image: '/acp.webp',
     problems: 'Cutting ACP manual berisiko merusak lapisan aluminium dan core material, mengakibatkan hasil yang tidak presisi, bergelombang, dan rentan terhadap korosi pada bagian yang terpotong.',
     solution: 'Teknologi CNC Laser Fiber Metal TepatLaser memotong ACP dengan presisi tinggi tanpa merusak struktur material, menghasilkan tepi yang seal sempurna dan tahan terhadap cuaca untuk aplikasi eksterior maupun interior.',
     link: '/jasa/cnc-laser-fiber',
     alt: 'Fasad gedung modern menggunakan material ACP hasil cutting Laser Fiber'
   },
   {
+    name: 'Metal/Stainless Steel',
+    image: '/stainless.webp',
+    problems: 'Pemotongan metal konvensional menghasilkan tepi yang kasar, memerlukan proses finishing yang mahal, dan sering tidak presisi untuk aplikasi industri yang membutuhkan toleransi ketat.',
+    solution: 'CNC Laser Fiber Metal TepatLaser mampu memotong berbagai jenis logam termasuk stainless steel dengan ketebalan hingga 20mm. Hasil potongan bersih, presisi tinggi, dan siap untuk aplikasi industri tanpa proses finishing tambahan.',
+    link: '/jasa/cnc-laser-fiber',
+    alt: 'Komponen metal stainless steel hasil cutting laser fiber dengan presisi tinggi'
+  },
+  {
+    name: 'Plywood/Multiplex',
+    image: '/plywood.webp',
+    problems: 'Pemotongan plywood manual sering menghasilkan tepi yang tidak rata, splintering pada lapisan veneer, dan kesulitan dalam membuat bentuk kompleks atau detail yang rumit.',
+    solution: 'Teknologi CNC Router TepatLaser dengan mata pisau khusus kayu memberikan hasil potongan plywood yang halus tanpa splintering. Mampu mengerjakan detail rumit dan bentuk kompleks dengan presisi tinggi untuk furniture dan konstruksi.',
+    link: '/jasa/cnc-router',
+    alt: 'Furniture plywood dengan detail cutting rumit hasil CNC Router'
+  },
+  {
     name: 'Grafir/Engrave',
-    image: 'engraving.webp',
+    image: '/engraving.webp',
     problems: 'Proses engraving manual memakan waktu lama, hasil tidak konsisten antar produk, dan sulit mencapai detail yang kompleks, terutama untuk produksi dalam jumlah besar.',
     solution: 'Mesin Galvo 30W TepatLaser memberikan hasil engraving yang konsisten dan detail hingga resolusi tinggi. Proses otomatis memungkinkan produksi massal dengan kualitas identik dan waktu pengerjaan yang sangat efisien.',
     link: '/jasa/galvo-engraving',
@@ -96,18 +112,18 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section 
         className="relative bg-cover bg-center text-white section-padding"
-        style={{ backgroundImage: "url('hero.webp')" }}
+        style={{ backgroundImage: "url('/hero.webp')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* SEO: h1 adalah heading paling penting di halaman */}
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Jasa Laser Cutting
+            Jasa Cutting Laser Sejabodetabek
             <span className="block text-orange-400">Presisi Tinggi & Engraving</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Solusi terpercaya untuk cutting MDF, GRC, PVC, ACP, dan layanan engraving 
-            dengan teknologi CNC terdepan di seluruh Indonesia.
+            Solusi terpercaya untuk jasa cutting laser di Jakarta, Bogor, Depok, Tangerang, Bekasi. 
+            Spesialis cutting MDF, GRC, PVC, ACP, Stainless Steel, Plywood dengan teknologi CNC terdepan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-lg mx-auto mb-12">
             <button 
@@ -137,11 +153,11 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Solusi untuk Berbagai Material
+              Jasa Cutting Laser Terpercaya di Sejabodetabek
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Spesialisasi dalam berbagai material dengan teknologi cutting terdepan 
-              untuk hasil yang sempurna setiap saat.
+              Melayani Jakarta, Bogor, Depok, Tangerang, Bekasi dengan spesialisasi cutting berbagai material 
+              menggunakan teknologi CNC terdepan untuk hasil yang sempurna setiap saat.
             </p>
           </div>
           {/* RESPONSIVE: Penyesuaian grid untuk layar lebih kecil */}
@@ -198,6 +214,48 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Area Layanan Section */}
+      <section className="py-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Area Layanan Jasa Cutting Laser
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              TepatLaser melayani seluruh wilayah Sejabodetabek dengan komitmen memberikan layanan cutting laser terbaik.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              { city: 'Jakarta', desc: 'Jasa cutting laser di Jakarta dengan teknologi CNC terdepan untuk semua kebutuhan industri dan komersial.' },
+              { city: 'Bogor', desc: 'Layanan cutting laser di Bogor dengan presisi tinggi untuk furniture, konstruksi, dan aplikasi khusus.' },
+              { city: 'Depok', desc: 'Jasa cutting laser di Depok dengan hasil berkualitas untuk berbagai material dan kompleksitas desain.' },
+              { city: 'Tangerang', desc: 'Cutting laser di Tangerang dengan teknologi modern untuk memenuhi standar industri terkini.' },
+              { city: 'Bekasi', desc: 'Layanan cutting laser di Bekasi dengan tim profesional dan peralatan canggih untuk hasil optimal.' }
+            ].map((area, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm text-center">
+                <h3 className="text-xl font-bold text-blue-600 mb-3">{area.city}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{area.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-700 mb-6">
+              Konsultasi gratis untuk mengetahui estimasi biaya dan waktu pengerjaan sesuai lokasi Anda.
+            </p>
+            <button 
+              onClick={handleConsultation}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg flex items-center justify-center space-x-2 mx-auto transition-colors"
+            >
+              <span>Konsultasi Sekarang</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,6 +286,83 @@ const Home: React.FC = () => {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Informasi Harga Section */}
+      <section className="py-16 bg-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Informasi Harga Jasa Cutting Laser
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Biaya jasa cutting laser ditentukan oleh berbagai faktor untuk memberikan harga yang fair dan transparan.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
+              <h3 className="font-bold text-gray-900 mb-3">Jenis Material</h3>
+              <p className="text-gray-600 text-sm">
+                Harga berbeda untuk MDF, PVC, ACP, Stainless Steel, Plywood, dan GRC sesuai karakteristik material
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
+              <h3 className="font-bold text-gray-900 mb-3">Ketebalan</h3>
+              <p className="text-gray-600 text-sm">
+                Biaya cutting meningkat sesuai ketebalan material yang mempengaruhi waktu dan kompleksitas pengerjaan
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
+              <h3 className="font-bold text-gray-900 mb-3">Kompleksitas Desain</h3>
+              <p className="text-gray-600 text-sm">
+                Harga disesuaikan dengan tingkat detail dan kerumitan bentuk yang memerlukan presisi lebih tinggi
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
+              <h3 className="font-bold text-gray-900 mb-3">Volume Produksi</h3>
+              <p className="text-gray-600 text-sm">
+                Biaya per unit lebih ekonomis untuk volume besar dengan sistem harga bertingkat yang menguntungkan
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mengapa Tidak Ada Daftar Harga Tetap?</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Setiap proyek cutting laser memiliki keunikan tersendiri. Faktor seperti jenis material, ketebalan, 
+                kompleksitas desain, volume produksi, dan lokasi pengerjaan sangat mempengaruhi biaya akhir. 
+                Kami berkomitmen memberikan harga yang fair dan transparan melalui konsultasi langsung.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="text-center">
+                <h4 className="font-semibold text-gray-900 mb-3">Estimasi Gratis</h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  Dapatkan estimasi biaya yang akurat sesuai spesifikasi proyek Anda tanpa biaya konsultasi
+                </p>
+              </div>
+              <div className="text-center">
+                <h4 className="font-semibold text-gray-900 mb-3">Harga Kompetitif</h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  Kami menjamin harga yang kompetitif dengan kualitas hasil terbaik di kelasnya
+                </p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <button 
+                onClick={handleConsultation}
+                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg flex items-center justify-center space-x-2 mx-auto transition-colors"
+              >
+                <span>Konsultasi Harga via WhatsApp</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -12,12 +12,17 @@ import GalvoEngraving from './pages/services/GalvoEngraving';
 import Products from './pages/Products';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import MDF from './pages/material/MDF';
+import GRC from './pages/material/GRC';
+import PVC from './pages/material/PVC';
+import ACP from './pages/material/ACP';
+import StainlessSteel from './pages/material/StainlessSteel';
+import Plywood from './pages/material/Plywood';
 import './App.css';
 
 function App() {
   return (
-    // Penambahan `basename` ini yang bakal benerin semua link di website lu
-    <Router basename="/tepatlaser">
+    <Router>
       <div className="min-h-screen bg-white">
         <Navbar />
         <main className="pt-16">
@@ -27,6 +32,12 @@ function App() {
             <Route path="/jasa/cnc-laser-co2" element={<CNCLaserCO2 />} />
             <Route path="/jasa/cnc-laser-fiber" element={<CNCLaserFiber />} />
             <Route path="/jasa/galvo-engraving" element={<GalvoEngraving />} />
+            <Route path="/material/mdf" element={<MDF />} />
+            <Route path="/material/grc" element={<GRC />} />
+            <Route path="/material/pvc" element={<PVC />} />
+            <Route path="/material/acp" element={<ACP />} />
+            <Route path="/material/stainless-steel" element={<StainlessSteel />} />
+            <Route path="/material/plywood" element={<Plywood />} />
             <Route path="/produk" element={<Products />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
