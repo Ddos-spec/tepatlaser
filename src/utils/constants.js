@@ -327,7 +327,7 @@ export const NAVIGATION = [
     submenu: [
       { name: "CNC Router", href: "/tepatlaser/jasa-cnc-router" },
       { name: "Laser Fiber", href: "/tepatlaser/jasa-laser-fiber" },
-      { name: "Laser CO2", href: "/tepatlaser/asa-laser-co2" },
+      { name: "Laser CO2", href: "/tepatlaser/jasa-laser-co2" },
       { name: "Galvo Engraving", href: "/tepatlaser/jasa-galvo-engraving" }
     ]
   },
