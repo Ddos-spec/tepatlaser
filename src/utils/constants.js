@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   author: "LaserCut Pro Team",
   keywords: "jasa laser cutting, cnc router, laser fiber, laser co2, galvo engraving, jawa barat, bandung, bekasi, bogor, depok, cimahi, sukabumi",
   phone: "+62 812-3456-7890",
-  whatsapp: "6281234567890",
+  whatsapp: "6281234567890", 
   email: "info@lasercut-pro.com",
   address: "Jl. Industri Raya No. 123, Bandung, Jawa Barat 40123",
   businessHours: "Senin - Sabtu: 08:00 - 17:00 WIB",
@@ -26,7 +26,7 @@ export const SERVICES = [
     description: "Layanan CNC Router presisi tinggi untuk berbagai material kayu, MDF, dan plastik",
     features: ["Presisi 0.1mm", "Material Kayu & MDF", "Ukuran hingga 2x3 meter", "Finishing Premium"],
     price: "Mulai dari Rp 50.000/m²",
-    image: "/tepatlaser/mesin-cnc-router.webp",
+    image: "/tepatlaser/images/cncrouter.webp",
     keywords: "jasa cnc router bandung, cnc router bekasi, cnc router bogor"
   },
   {
@@ -36,7 +36,7 @@ export const SERVICES = [
     description: "Laser Fiber cutting untuk material metal dengan hasil sempurna dan presisi tinggi",
     features: ["Cutting Metal", "Presisi 0.05mm", "Stainless Steel", "Aluminium & Besi"],
     price: "Mulai dari Rp 75.000/m²",
-    image: "/tepatlaser/mesin-laser-fiber.webp",
+    image: "/tepatlaser/images/laserfiber.webp",
     keywords: "laser fiber cutting, potong stainless steel, laser metal bekasi"
   },
   {
@@ -46,7 +46,7 @@ export const SERVICES = [
     description: "Laser CO2 untuk material non-metal seperti acrylic, kayu, dan kain dengan detail sempurna",
     features: ["Acrylic & Kayu", "Engraving Detail", "Cutting Presisi", "Finishing Halus"],
     price: "Mulai dari Rp 40.000/m²",
-    image: "/tepatlaser/mesin-laser-co2.webp",
+    image: "/tepatlaser/images/co2.webp",
     keywords: "laser co2 acrylic bogor, potong acrylic bandung, laser kayu"
   },
   {
@@ -56,7 +56,7 @@ export const SERVICES = [
     description: "Galvo laser engraving untuk marking, logo, dan detail halus pada berbagai material",
     features: ["Marking Presisi", "Logo & Text", "Material Beragam", "Hasil Permanen"],
     price: "Mulai dari Rp 25.000/pcs",
-    image: "/tepatlaser/mesin-galvo-engraving.webp",
+    image: "/tepatlaser/images/engraving.webp",
     keywords: "laser engraving depok, marking laser, logo engraving"
   }
 ];
@@ -69,7 +69,7 @@ export const MATERIALS = [
     description: "Cutting ACP (Aluminium Composite Panel) untuk signage dan fasad bangunan",
     thickness: "3mm - 6mm",
     applications: ["Signage", "Fasad", "Interior", "Eksterior"],
-    image: "/tepatlaser/material-acp-sample.webp",
+    image: "/tepatlaser/images/acp.webp",
     keywords: "potong acp aluminium cimahi, cutting acp bandung"
   },
   {
@@ -79,7 +79,7 @@ export const MATERIALS = [
     description: "Cutting PVC custom untuk berbagai keperluan industri dan kreatif",
     thickness: "1mm - 10mm",
     applications: ["Signage", "Prototype", "Display", "Packaging"],
-    image: "/tepatlaser/material-pvc-sample.webp",
+    image: "/tepatlaser/images/pvc.webp",
     keywords: "cutting pvc custom sukabumi, potong pvc plastik"
   },
   {
@@ -89,7 +89,7 @@ export const MATERIALS = [
     description: "Laser cutting stainless steel dengan presisi tinggi untuk industri",
     thickness: "0.5mm - 20mm",
     applications: ["Industri", "Arsitektur", "Furniture", "Dekorasi"],
-    image: "/tepatlaser/material-metal-sample.webp",
+    image: "/tepatlaser/images/stainlesssteel.webp",
     keywords: "laser cutting stainless steel, potong besi presisi"
   },
   {
@@ -99,7 +99,7 @@ export const MATERIALS = [
     description: "Cutting dan engraving acrylic untuk display dan dekorasi premium",
     thickness: "2mm - 30mm",
     applications: ["Display", "Signage", "Dekorasi", "Prototype"],
-    image: "/tepatlaser/material-acrylic-sample.webp",
+    image: "/tepatlaser/images/Acrylic.webp",
     keywords: "potong acrylic kaca, laser acrylic bandung"
   },
   {
@@ -109,7 +109,7 @@ export const MATERIALS = [
     description: "Cutting dan engraving Ply Wood / Multiplex untuk furniture dan dekorasi",
     thickness: "3mm - 20mm",
     applications: ["Furniture", "Dekorasi", "Kerajinan", "Interior"],
-    image: "/tepatlaser/material-plywood-sample.webp",
+    image: "/tepatlaser/images/Ply Wood.webp",
     keywords: "potong plywood, laser kayu, multiplex"
   },
   {
@@ -119,7 +119,7 @@ export const MATERIALS = [
     description: "Cutting GRC (Glassfibre Reinforced Concrete) untuk fasad dan ornamen bangunan",
     thickness: "8mm - 15mm",
     applications: ["Fasad", "Ornamen", "Panel", "Eksterior"],
-    image: "/tepatlaser/material-grc-sample.webp",
+    image: "/tepatlaser/images/grc.webp",
     keywords: "potong grc, grc laser cutting, fasad grc"
   }
 ];
@@ -132,7 +132,7 @@ export const TESTIMONIALS = [
     position: "Project Manager",
     content: "Kualitas laser cutting terbaik yang pernah kami gunakan. Presisi tinggi dan hasil sempurna untuk semua project signage kami.",
     rating: 5,
-    image: "/tepatlaser/testimonial-1.webp"
+    image: "/tepatlaser/images/budisantoso.webp"
   },
   {
     id: 2,
@@ -141,7 +141,7 @@ export const TESTIMONIALS = [
     position: "Lead Architect",
     content: "Pelayanan profesional dan hasil cutting yang sangat memuaskan. Recommended untuk semua kebutuhan laser cutting.",
     rating: 5,
-    image: "/tepatlaser/testimonial-2.webp"
+    image: "/tepatlaser/images/Sari Dewi.webp"
   },
   {
     id: 3,
@@ -150,7 +150,7 @@ export const TESTIMONIALS = [
     position: "Owner",
     content: "Sudah 3 tahun menggunakan jasa LaserCut Pro. Selalu puas dengan kualitas dan ketepatan waktu pengerjaan.",
     rating: 5,
-    image: "/tepatlaser/testimonial-3.webp"
+    image: "/tepatlaser/images/Ahmad Rizki.webp"
   }
 ];
 
@@ -161,7 +161,7 @@ export const PORTFOLIO = [
     category: "Commercial",
     material: "ACP Aluminium",
     service: "CNC Router",
-    image: "/tepatlaser/portfolio-hotel-signage.webp",
+    image: "/tepatlaser/images/singagehote.webp",
     description: "Pembuatan signage premium untuk hotel bintang 5 dengan detail presisi tinggi"
   },
   {
@@ -170,7 +170,7 @@ export const PORTFOLIO = [
     category: "Industrial",
     material: "Stainless Steel",
     service: "Laser Fiber",
-    image: "/tepatlaser/portfolio-furniture-steel.webp",
+    image: "/tepatlaser/images/furnituremetal.webp",
     description: "Cutting furniture stainless steel custom untuk restaurant modern"
   },
   {
@@ -179,7 +179,7 @@ export const PORTFOLIO = [
     category: "Retail",
     material: "Acrylic",
     service: "Laser CO2",
-    image: "/tepatlaser/portfolio-acrylic-display.webp",
+    image: "/tepatlaser/images/displyacrylic.webp",
     description: "Display acrylic premium untuk toko retail dengan engraving logo"
   },
   {
@@ -188,7 +188,7 @@ export const PORTFOLIO = [
     category: "Manufacturing",
     material: "PVC",
     service: "CNC Router",
-    image: "/tepatlaser/portfolio-prototype-pvc.webp",
+    image: "/tepatlaser/images/prototype.webp",
     description: "Prototype komponen industri dengan presisi tinggi menggunakan PVC"
   }
 ];
@@ -230,7 +230,7 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "5 menit",
     publishDate: "2024-01-15",
-    image: "/tepatlaser/blog-material-guide.webp"
+    image: "/tepatlaser/images/acp.webp"
   },
   {
     id: 2,
@@ -240,7 +240,7 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "7 menit",
     publishDate: "2024-01-10",
-    image: "/tepatlaser/blog-laser-comparison.webp"
+    image: "/tepatlaser/images/laserfiber.webp"
   },
   {
     id: 3,
@@ -250,7 +250,7 @@ export const BLOG_POSTS = [
     category: "Industry",
     readTime: "6 menit",
     publishDate: "2024-01-05",
-    image: "/tepatlaser/blog-industry-trends.webp"
+    image: "/tepatlaser/images/cncrouter.webp"
   },
   {
     id: 4,
@@ -260,7 +260,7 @@ export const BLOG_POSTS = [
     category: "Tips",
     readTime: "8 menit",
     publishDate: "2024-01-20",
-    image: "/tepatlaser/blog-common-mistakes.webp"
+    image: "/tepatlaser/images/co2.webp"
   },
   {
     id: 5,
@@ -270,7 +270,7 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "10 menit",
     publishDate: "2024-01-18",
-    image: "/tepatlaser/blog-file-preparation.webp"
+    image: "/tepatlaser/images/engraving.webp"
   },
   {
     id: 6,
@@ -280,7 +280,7 @@ export const BLOG_POSTS = [
     category: "Comparison",
     readTime: "9 menit",
     publishDate: "2024-01-16",
-    image: "/tepatlaser/blog-grc-vs-acp.webp"
+    image: "/tepatlaser/images/grc.webp"
   },
   {
     id: 7,
@@ -290,7 +290,7 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "12 menit",
     publishDate: "2024-01-14",
-    image: "/tepatlaser/blog-laser-engraving-techniques.webp"
+    image: "/tepatlaser/images/stainlesssteel.webp"
   },
   {
     id: 8,
@@ -300,7 +300,7 @@ export const BLOG_POSTS = [
     category: "Case Study",
     readTime: "11 menit",
     publishDate: "2024-01-12",
-    image: "/tepatlaser/blog-cnc-furniture-case-study.webp"
+    image: "/tepatlaser/images/Ply Wood.webp"
   },
   {
     id: 9,
@@ -310,7 +310,7 @@ export const BLOG_POSTS = [
     category: "Maintenance",
     readTime: "6 menit",
     publishDate: "2024-01-08",
-    image: "/tepatlaser/blog-stainless-steel-maintenance.webp"
+    image: "/tepatlaser/images/Acrylic.webp"
   }
 ];
 
