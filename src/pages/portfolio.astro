@@ -10,19 +10,19 @@ const sortedPortfolio = PORTFOLIO.sort((a, b) => b.id - a.id);
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Portfolio LaserCut Pro",
-  "description": "Koleksi project laser cutting, CNC router, dan engraving terbaik dari LaserCut Pro",
+  "name": "Portfolio Tepat Laser",
+  "description": "Koleksi project laser cutting, CNC router, dan engraving terbaik dari Tepat Laser",
   "url": `${Astro.site}portfolio/`,
   "publisher": {
     "@type": "Organization",
-    "name": "LaserCut Pro"
+    "name": "Tepat Laser"
   }
 };
 ---
 
 <BaseLayout 
   title="Portfolio - Project Laser Cutting & CNC Router Terbaik"
-  description="Lihat koleksi project laser cutting, CNC router, dan engraving terbaik dari LaserCut Pro. Hasil berkualitas tinggi dengan presisi sempurna"
+  description="Lihat koleksi project laser cutting, CNC router, dan engraving terbaik dari Tepat Laser. Hasil berkualitas tinggi dengan presisi sempurna"
   keywords="portfolio laser cutting, project cnc router, hasil laser fiber, karya laser co2, galeri manufaktur"
   jsonLd={jsonLd}
 >
@@ -32,7 +32,7 @@ const jsonLd = {
   <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold mb-6">
-        Portfolio LaserCut Pro
+        Portfolio Tepat Laser
       </h1>
       <p class="text-xl text-blue-100 max-w-3xl mx-auto">
         Koleksi project laser cutting, CNC router, dan engraving terbaik dengan presisi tinggi dan hasil berkualitas premium

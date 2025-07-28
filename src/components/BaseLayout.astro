@@ -29,9 +29,9 @@ if (!Astro.site) {
   throw new Error('SITE_URL environment variable is not set. Please update your astro.config.mjs');
 }
 const siteUrl = Astro.site; 
-const siteName = "LaserCut Pro";
+const siteName = "Tepat Laser";
 
-const defaultTitle = "Jasa Laser Cutting Terpercaya #1 di Jawa Barat | LaserCut Pro";
+const defaultTitle = "Jasa Laser Cutting Terpercaya #1 di Jawa Barat | Tepat Laser";
 const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;
 // Cara paling benar membuat URL, anti error path ganda
 const fullUrl = new URL(url || Astro.url.pathname, siteUrl);
@@ -48,7 +48,7 @@ const fullImage = new URL(image, siteUrl);
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
-  <meta name="author" content="LaserCut Pro Team" />
+  <meta name="author" content="Tepat Laser Team" />
   <link rel="canonical" href={fullUrl.href} />
   
   {noindex ? (
@@ -91,7 +91,7 @@ const fullImage = new URL(image, siteUrl);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "LaserCut Pro",
+    "name": "Tepat Laser",
     "url": siteUrl.href, // Menggunakan URL dinamis
     "logo": new URL('/tepatlaser/logo-company.webp', siteUrl).href, // Menggunakan URL dinamis
     "description": "Solusi laser cutting profesional dengan teknologi terdepan di Jawa Barat",
