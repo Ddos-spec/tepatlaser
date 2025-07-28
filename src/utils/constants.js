@@ -295,7 +295,7 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "12 menit",
     publishDate: "2024-01-14",
-    image: "/tepatlaser/images/stainlesssteel.webp"
+    image: "/tepatlaser/images/galvo.webp"
   },
   {
     id: 8,
