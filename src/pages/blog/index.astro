@@ -73,13 +73,12 @@ const jsonLd = {
               </p>
               <div class="flex items-center justify-between">
                 <span class="text-sm text-gray-500">
-                  {new Date(post.publishDate).toLocaleDateString('id-ID', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric 
-' 
-                  })}
-                </span>
+  {new Date(post.publishDate).toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric' // Pastikan string ditutup dengan '
+  })}
+</span>
                 <a 
                   href={`/tepatlaser/blog/${post.slug}/`}
                   class="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
