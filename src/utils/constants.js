@@ -56,7 +56,7 @@ export const SERVICES = [
     description: "Galvo laser engraving untuk marking, logo, dan detail halus pada berbagai material",
     features: ["Marking Presisi", "Logo & Text", "Material Beragam", "Hasil Permanen"],
     price: "Mulai dari Rp 25.000/pcs",
-    image: "/tepatlaser/images/engraving.webp",
+    image: "/tepatlaser/images/galvo.webp",
     keywords: "laser engraving jakarta, marking laser bekasi, logo engraving bogor, galvo engraving depok, laser marking tangerang"
   }
 ];
