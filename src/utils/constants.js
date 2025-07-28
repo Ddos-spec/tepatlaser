@@ -22,7 +22,7 @@ export const SERVICES = [
   {
     id: "cnc-router",
     name: "Jasa CNC Router",
-    slug: "jasa-cnc-router",
+    slug: "jasa-cnc-router1",
     description: "Layanan CNC Router presisi tinggi untuk berbagai material kayu, MDF, dan plastik",
     features: ["Presisi 0.1mm", "Material Kayu & MDF", "Ukuran hingga 2x3 meter", "Finishing Premium"],
     price: "Mulai dari Rp 50.000/m²",
@@ -325,28 +325,28 @@ export const NAVIGATION = [
     name: "Layanan", 
     href: "/tepatlaser/#services",
     submenu: [
-      { name: "CNC Router", href: "/tepatlaser/src/pages/jasa-cnc-router" },
-      { name: "Laser Fiber", href: "/tepatlaser/src/pages/jasa-laser-fiber" },
-      { name: "Laser CO2", href: "/tepatlaser/src/pages/asa-laser-co2" },
-      { name: "Galvo Engraving", href: "/tepatlaser/src/pages/jasa-galvo-engraving" }
+      { name: "CNC Router", href: "/tepatlaser/pages/jasa-cnc-router" },
+      { name: "Laser Fiber", href: "/tepatlaser/pages/jasa-laser-fiber" },
+      { name: "Laser CO2", href: "/tepatlaser/pages/asa-laser-co2" },
+      { name: "Galvo Engraving", href: "/tepatlaser/pages/jasa-galvo-engraving" }
     ]
   },
   { 
     name: "Material", 
     href: "/tepatlaser/#materials",
     submenu: [
-      { name: "ACP", href: "/tepatlaser/src/pages/material-acp" },
-      { name: "PVC Plastik", href: "/tepatlaser/src/pages/material-pvc" },
-      { name: "Stainless Steel / Metal", href: "/tepatlaser/src/pages/material-metal" },
-      { name: "Acrylic Kaca", href: "/tepatlaser/src/pages/material-acrylic" },
-      { name: "Ply Wood / Multiplex", href: "/tepatlaser/src/pages/material-ply-wood-multiplex" },
-      { name: "GRC", href: "/tepatlaser/src/pages//material-grc" }
+      { name: "ACP", href: "/tepatlaser/pages/material-acp" },
+      { name: "PVC Plastik", href: "/tepatlaser/pages/material-pvc" },
+      { name: "Stainless Steel / Metal", href: "/tepatlaser/pages/material-metal" },
+      { name: "Acrylic Kaca", href: "/tepatlaser/pages/material-acrylic" },
+      { name: "Ply Wood / Multiplex", href: "/tepatlaser/pages/material-ply-wood-multiplex" },
+      { name: "GRC", href: "/tepatlaser/pages/material-grc" }
     ]
   },
-  { name: "Portfolio", href: "/tepatlaser/src/pages/portfolio" },
-  { name: "Blog", href: "/tepatlaser/src/pages/blog" },
-  { name: "Tentang", href: "/tepatlaser/src/pages/about" },
-  { name: "Kontak", href: "/tepatlaser/src/pages/contact" }
+  { name: "Portfolio", href: "/tepatlaser/pages/portfolio" },
+  { name: "Blog", href: "/tepatlaser/pages/blog" },
+  { name: "Tentang", href: "/tepatlaser/pages/about" },
+  { name: "Kontak", href: "/tepatlaser/pages/contact" }
 ];
 
 export const WHATSAPP_MESSAGES = {
