@@ -202,7 +202,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
   id="mobile-menu-overlay"
 ></div>
 
-<script>
+<script type="module">
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -212,12 +212,12 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     const header = document.getElementById('main-header');
 
     // Utility function untuk logging (development)
-    const log = (message: string, data?: any) => {
+    const log = (message, data) => {
       console.log(`[Header] ${message}`, data || '');
     };
 
     // Mobile menu toggle functions
-    function openMobileMenu(): void {
+    function openMobileMenu() {
       if (mobileMenu && mobileMenuOverlay && menuIcon && closeIcon && mobileMenuButton) {
         log('Opening mobile menu');
         
@@ -235,7 +235,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
       }
     }
 
-    function closeMobileMenu(): void {
+    function closeMobileMenu() {
       if (mobileMenu && mobileMenuOverlay && menuIcon && closeIcon && mobileMenuButton) {
         log('Closing mobile menu');
         
@@ -252,7 +252,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
         document.removeEventListener('touchmove', preventScrolling);
         
         // Close all submenus with animation
-        document.querySelectorAll('[id^="submenu-"]').forEach((submenu: Element) => {
+        document.querySelectorAll('[id^="submenu-"]').forEach((submenu) => {
           if (submenu instanceof HTMLElement) {
             submenu.style.maxHeight = '0px';
             submenu.classList.remove('open');
@@ -260,20 +260,20 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
         });
         
         // Reset all submenu icons
-        document.querySelectorAll('[id^="submenu-icon-"]').forEach((icon: Element) => {
+        document.querySelectorAll('[id^="submenu-icon-"]').forEach((icon) => {
           if (icon instanceof HTMLElement) {
             icon.style.transform = 'rotate(0deg)';
           }
         });
         
         // Reset all submenu buttons
-        document.querySelectorAll('[data-submenu-index]').forEach((button: Element) => {
+        document.querySelectorAll('[data-submenu-index]').forEach((button) => {
           button.setAttribute('aria-expanded', 'false');
         });
       }
     }
 
-    function toggleMobileMenu(): void {
+    function toggleMobileMenu() {
       if (mobileMenu) {
         const isOpen = mobileMenu.classList.contains('translate-x-0');
         if (isOpen) {
@@ -285,12 +285,12 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     }
 
     // Prevent scrolling when mobile menu is open
-    function preventScrolling(e: TouchEvent): void {
+    function preventScrolling(e) {
       e.preventDefault();
     }
 
     // Submenu toggle function dengan error handling
-    function toggleSubmenu(index: number): void {
+    function toggleSubmenu(index) {
       try {
         const submenu = document.getElementById(`submenu-${index}`);
         const icon = document.getElementById(`submenu-icon-${index}`);
@@ -313,7 +313,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
           button.setAttribute('aria-expanded', 'false');
         } else {
           // Close other submenus first
-          document.querySelectorAll('[id^="submenu-"]:not(#submenu-' + index + ')').forEach((otherSubmenu: Element) => {
+          document.querySelectorAll('[id^="submenu-"]:not(#submenu-' + index + ')').forEach((otherSubmenu) => {
             if (otherSubmenu instanceof HTMLElement && otherSubmenu.classList.contains('open')) {
               const otherIndex = otherSubmenu.id.split('-')[1];
               const otherIcon = document.getElementById(`submenu-icon-${otherIndex}`);
@@ -354,17 +354,17 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     }
 
     // Submenu button event listeners
-    document.querySelectorAll('[data-submenu-index]').forEach((button: Element) => {
+    document.querySelectorAll('[data-submenu-index]').forEach((button) => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const index = parseInt((button as HTMLElement).getAttribute('data-submenu-index') || '0');
+        const index = parseInt(button.getAttribute('data-submenu-index') || '0');
         toggleSubmenu(index);
       });
     });
 
     // Close mobile menu when clicking on nav links
-    document.querySelectorAll('#mobile-menu a[href]').forEach((link: Element) => {
+    document.querySelectorAll('#mobile-menu a[href]').forEach((link) => {
       link.addEventListener('click', () => {
         setTimeout(() => {
           closeMobileMenu();
@@ -376,7 +376,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     let lastScrollY = window.scrollY;
     let ticking = false;
 
-    function updateHeaderOnScroll(): void {
+    function updateHeaderOnScroll() {
       if (!header) return;
       
       const currentScrollY = window.scrollY;
@@ -422,7 +422,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     // Handle focus management
     document.addEventListener('focusin', (e) => {
       if (mobileMenu && mobileMenu.classList.contains('translate-x-0')) {
-        const target = e.target as HTMLElement;
+        const target = e.target;
         if (!mobileMenu.contains(target) && target !== mobileMenuButton) {
           // Focus escaped from mobile menu, close it
           closeMobileMenu();

@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   author: "LaserCut Pro Team",
   keywords: "jasa laser cutting jakarta, laser cutting bogor, laser cutting depok, laser cutting tangerang, laser cutting bekasi, cnc router jabodetabek, laser fiber cutting, potong akrilik jakarta, potong kayu bogor, cutting metal depok, laser engraving tangerang, galvo engraving bekasi",
   phone: "+62 812-3456-7890",
-  whatsapp: "6281234567890", 
+  whatsapp: "6285165693179", 
   email: "info@lasercut-pro.com",
   address: "Jl. Industri Raya No. 123, Jakarta Selatan, DKI Jakarta 12560",
   businessHours: "Senin - Sabtu: 08:00 - 17:00 WIB",
