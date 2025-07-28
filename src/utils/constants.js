@@ -325,28 +325,28 @@ export const NAVIGATION = [
     name: "Layanan", 
     href: "/tepatlaser/#services",
     submenu: [
-      { name: "CNC Router", href: "/tepatlaser/jasa-cnc-router" },
-      { name: "Laser Fiber", href: "/tepatlaser/jasa-laser-fiber" },
-      { name: "Laser CO2", href: "/tepatlaser/jasa-laser-co2" },
-      { name: "Galvo Engraving", href: "/tepatlaser/jasa-galvo-engraving" }
+      { name: "CNC Router", href: "/tepatlaser/src/pages/jasa-cnc-router" },
+      { name: "Laser Fiber", href: "/tepatlaser/src/pages/jasa-laser-fiber" },
+      { name: "Laser CO2", href: "/tepatlaser/src/pages/asa-laser-co2" },
+      { name: "Galvo Engraving", href: "/tepatlaser/src/pages/jasa-galvo-engraving" }
     ]
   },
   { 
     name: "Material", 
     href: "/tepatlaser/#materials",
     submenu: [
-      { name: "ACP", href: "/tepatlaser/material-acp" },
-      { name: "PVC Plastik", href: "/tepatlaser/material-pvc" },
-      { name: "Stainless Steel / Metal", href: "/tepatlaser/material-metal" },
-      { name: "Acrylic Kaca", href: "/tepatlaser/material-acrylic" },
-      { name: "Ply Wood / Multiplex", href: "/tepatlaser/material-ply-wood-multiplex" },
-      { name: "GRC", href: "/tepatlaser/material-grc" }
+      { name: "ACP", href: "/tepatlaser/src/pages/material-acp" },
+      { name: "PVC Plastik", href: "/tepatlaser/src/pages/material-pvc" },
+      { name: "Stainless Steel / Metal", href: "/tepatlaser/src/pages/material-metal" },
+      { name: "Acrylic Kaca", href: "/tepatlaser/src/pages/material-acrylic" },
+      { name: "Ply Wood / Multiplex", href: "/tepatlaser/src/pages/material-ply-wood-multiplex" },
+      { name: "GRC", href: "/tepatlaser/src/pages//material-grc" }
     ]
   },
-  { name: "Portfolio", href: "/tepatlaser/portfolio" },
-  { name: "Blog", href: "/tepatlaser/blog" },
-  { name: "Tentang", href: "/tepatlaser/about" },
-  { name: "Kontak", href: "/tepatlaser/contact" }
+  { name: "Portfolio", href: "/tepatlaser/src/pages/portfolio" },
+  { name: "Blog", href: "/tepatlaser/src/pages/blog" },
+  { name: "Tentang", href: "/tepatlaser/src/pages/about" },
+  { name: "Kontak", href: "/tepatlaser/src/pages/contact" }
 ];
 
 export const WHATSAPP_MESSAGES = {
