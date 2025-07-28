@@ -65,7 +65,7 @@ export const MATERIALS = [
   {
     id: "acp",
     name: "ACP",
-    slug: "ddos-spec/tepatlaser/material-acp/",
+    slug: "/tepatlaser/material-acp/",
     description: "Cutting ACP (Aluminium Composite Panel) untuk signage dan fasad bangunan",
     thickness: "3mm - 6mm",
     applications: ["Signage", "Fasad", "Interior", "Eksterior"],
@@ -74,7 +74,7 @@ export const MATERIALS = [
   },
   {
     id: "pvc",
-    name: "PVC Plastik",
+    name: "/tepatlaser/PVC Plastik/",
     slug: "material-pvc",
     description: "Cutting PVC custom untuk berbagai keperluan industri dan kreatif",
     thickness: "1mm - 10mm",
@@ -84,7 +84,7 @@ export const MATERIALS = [
   },
   {
     id: "metal",
-    name: "Stainless Steel / Metal",
+    name: "/tepatlaser/Stainless Steel / Metal/",
     slug: "material-metal",
     description: "Laser cutting stainless steel dengan presisi tinggi untuk industri",
     thickness: "0.5mm - 20mm",
@@ -94,7 +94,7 @@ export const MATERIALS = [
   },
   {
     id: "acrylic",
-    name: "Acrylic Kaca",
+    name: "/tepatlaser/Acrylic Kaca/",
     slug: "material-acrylic",
     description: "Cutting dan engraving acrylic untuk display dan dekorasi premium",
     thickness: "2mm - 30mm",
@@ -104,7 +104,7 @@ export const MATERIALS = [
   },
   {
     id: "ply-wood-multiplex",
-    name: "Ply Wood / Multiplex",
+    name: "/tepatlaser/Ply Wood / Multiplex/",
     slug: "material-ply-wood-multiplex",
     description: "Cutting dan engraving Ply Wood / Multiplex untuk furniture dan dekorasi",
     thickness: "3mm - 20mm",
@@ -114,7 +114,7 @@ export const MATERIALS = [
   },
   {
     id: "grc",
-    name: "GRC",
+    name: "/tepatlaser/GRC/",
     slug: "material-grc",
     description: "Cutting GRC (Glassfibre Reinforced Concrete) untuk fasad dan ornamen bangunan",
     thickness: "8mm - 15mm",
