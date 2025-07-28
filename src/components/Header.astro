@@ -76,7 +76,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 
       <!-- Mobile Menu Button -->
       <button
-        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-300 z-50"
+        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-300 z-50 relative"
         id="mobile-menu-button"
         aria-label="Toggle mobile menu"
         aria-expanded="false"
@@ -97,9 +97,15 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     id="mobile-menu"
   >
     <!-- Mobile Header Spacer -->
-    <div class="h-16 lg:h-20"></div>
+    <div class="h-16 lg:h-20 border-b border-gray-200 bg-white/95 backdrop-blur-md flex items-center justify-between px-4">
+      <div class="flex items-center">
+        <a href="/tepatlaser/" class="flex items-center space-x-3">
+          <h1 class="text-xl font-bold text-gray-900">Tepat Laser</h1>
+        </a>
+      </div>
+    </div>
     
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-screen bg-white">
       <!-- Mobile Navigation -->
       <nav class="flex-1 px-4 py-6 space-y-2" aria-label="Mobile navigation">
         {filteredNavigation.map((item, index) => (
@@ -124,14 +130,14 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
                 </button>
                 
                 <div 
-                  class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                  class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 rounded-lg mx-2"
                   id={`submenu-${index}`}
                 >
                   <div class="pl-4 pt-2 pb-2 space-y-1">
                     {item.submenu.map((subitem) => (
                       <a
                         href={subitem.href}
-                        class="block text-gray-600 hover:text-blue-600 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-300 text-sm font-medium"
+                        class="block text-gray-600 hover:text-blue-600 py-2 px-4 rounded-lg hover:bg-white transition-colors duration-300 text-sm font-medium"
                       >
                         {subitem.name}
                       </a>
@@ -153,7 +159,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
       </nav>
 
       <!-- Mobile Action Buttons -->
-      <div class="p-4 border-t border-gray-200 space-y-3">
+      <div class="p-4 border-t border-gray-200 space-y-3 bg-white">
         <a
           href="/tepatlaser/contact"
           class="btn-primary w-full text-center block py-3"
@@ -197,18 +203,6 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 ></div>
 
 <script>
-  // Mendeklarasikan tipe global untuk TypeScript (jika diperlukan)
-  declare global {
-    interface Window {
-      mobileMenuHandler: {
-        toggleSubmenu: (index: number) => void;
-        closeMobileMenu: () => void;
-        openMobileMenu: () => void;
-        toggleMobileMenu: () => void;
-      }
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -435,16 +429,6 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
         }
       }
     });
-
-    // Expose functions globally for debugging (development only)
-    if (typeof window !== 'undefined') {
-      window.mobileMenuHandler = {
-        toggleSubmenu,
-        closeMobileMenu,
-        openMobileMenu,
-        toggleMobileMenu
-      };
-    }
 
     log('Header component initialized successfully');
   });
