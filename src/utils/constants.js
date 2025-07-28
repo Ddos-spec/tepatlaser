@@ -62,6 +62,7 @@ export const SERVICES = [
 ];
 
 export const MATERIALS = [
+  { name: "Beranda", href: "/tepatlaser/", active: true },
   {
     id: "acp",
     name: "ACP",
