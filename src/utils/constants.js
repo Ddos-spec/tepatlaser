@@ -22,7 +22,7 @@ export const SERVICES = [
   {
     id: "cnc-router",
     name: "Jasa CNC Router",
-    slug: "jasa-cnc-router1",
+    slug: "jasa-cnc-router",
     description: "Layanan CNC Router presisi tinggi untuk berbagai material kayu, MDF, dan plastik",
     features: ["Presisi 0.1mm", "Material Kayu & MDF", "Ukuran hingga 2x3 meter", "Finishing Premium"],
     price: "Mulai dari Rp 50.000/m²",
