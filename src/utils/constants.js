@@ -65,7 +65,7 @@ export const MATERIALS = [
   {
     id: "acp",
     name: "ACP",
-    slug: "/tepatlaser/material-acp",
+    slug: "https://ddos-spec.github.io/tepatlaser/material-acp/",
     description: "Cutting ACP (Aluminium Composite Panel) untuk signage dan fasad bangunan",
     thickness: "3mm - 6mm",
     applications: ["Signage", "Fasad", "Interior", "Eksterior"],
