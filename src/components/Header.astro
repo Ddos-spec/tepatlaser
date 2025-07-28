@@ -76,7 +76,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 
       <!-- Mobile Menu Button -->
       <button
-        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-300 z-50"
         id="mobile-menu-button"
         aria-label="Toggle mobile menu"
         aria-expanded="false"
@@ -93,10 +93,13 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 
   <!-- Mobile Menu -->
   <div
-    class="lg:hidden fixed inset-0 top-16 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+    class="lg:hidden fixed inset-0 top-0 bg-white z-30 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
     id="mobile-menu"
   >
-    <div class="flex flex-col min-h-full">
+    <!-- Mobile Header Spacer -->
+    <div class="h-16 lg:h-20"></div>
+    
+    <div class="flex flex-col min-h-screen">
       <!-- Mobile Navigation -->
       <nav class="flex-1 px-4 py-6 space-y-2" aria-label="Mobile navigation">
         {filteredNavigation.map((item, index) => (
@@ -189,7 +192,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 
 <!-- Mobile Menu Overlay -->
 <div
-  class="lg:hidden fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300"
+  class="lg:hidden fixed inset-0 bg-black/50 z-20 opacity-0 invisible transition-all duration-300"
   id="mobile-menu-overlay"
 ></div>
 
@@ -216,9 +219,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
 
     // Utility function untuk logging (development)
     const log = (message: string, data?: any) => {
-      if (process.env.NODE_ENV === 'development') {
-        console.log(`[Header] ${message}`, data || '');
-      }
+      console.log(`[Header] ${message}`, data || '');
     };
 
     // Mobile menu toggle functions
@@ -536,7 +537,7 @@ const filteredNavigation = NAVIGATION.filter(item => item.name !== "Kontak");
     }
     
     #mobile-menu {
-      top: calc(4rem + env(safe-area-inset-top));
+      top: calc(env(safe-area-inset-top));
     }
   }
 
