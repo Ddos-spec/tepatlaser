@@ -5,9 +5,9 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   // WAJIB: Konfigurasi untuk deploy ke GitHub Pages
   // Ganti 'ddos-spec' dengan username GitHub lu
-  // Ganti 'jasalasercutting' dengan nama repository lu
+  // Ganti 'tepatlaser' dengan nama repository lu
   site: 'https://ddos-spec.github.io',
-  base: '/rajacuttinglaser',
+  base: '/tepatlaser',
   
   integrations: [tailwind()],
   
