@@ -8,8 +8,8 @@ import { BLOG_POSTS } from '../../utils/constants.js';
 const sortedPosts = BLOG_POSTS.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
 // Safely construct the base URL
-const baseUrl = Astro.site ? Astro.site.toString() : 'https://ddos-spec.github.io'; // Sesuaikan dengan URL produksi Anda
-const blogUrl = `${baseUrl}/tepatlaser/blog/`;
+const baseUrl = Astro.site ? Astro.site.toString() : 'https://www.tepatlaser.com'; // Sesuaikan dengan URL produksi Anda
+const blogUrl = `${baseUrl}blog/`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -64,7 +64,7 @@ const jsonLd = {
                 <span class="text-sm text-gray-500">{post.readTime}</span>
               </div>
               <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                <a href={`/tepatlaser/blog/${post.slug}/`} class="hover:text-blue-600 transition-colors">
+                <a href={`blog/${post.slug}/`} class="hover:text-blue-600 transition-colors">
                   {post.title}
                 </a>
               </h2>
@@ -80,7 +80,7 @@ const jsonLd = {
   })}
 </span>
                 <a 
-                  href={`/tepatlaser/blog/${post.slug}/`}
+                  href={`blog/${post.slug}/`}
                   class="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
                 >
                   Baca Selengkapnya →
@@ -115,7 +115,7 @@ const jsonLd = {
           Konsultasi via WhatsApp
         </a>
         <a 
-          href="/tepatlaser/contact/" 
+          href="contact/" 
           class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
         >
           Request Quote

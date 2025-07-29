@@ -13,12 +13,12 @@ import { SITE_CONFIG, SERVICES, MATERIALS, NAVIGATION } from '../utils/constants
         <div class="flex items-center space-x-3 mb-6">
           <!-- Debug: Test multiple logo sources -->
           <img 
-            src="/tepatlaser/images/logo.webp" 
+            src="/images/logo.webp" 
             alt="Tepat Laser Logo" 
             class="h-10 w-auto"
             width="120"
             height="40"
-            onerror="this.onerror=null; this.src='/images/Logo.webp'; console.log('Trying Logo.webp');"
+            onerror="this.onerror=null; this.src='//images/Logo.webp'; console.log('Trying Logo.webp');"
             onload="console.log('Logo loaded successfully');"
           />
           <!-- Fallback jika logo tidak ada -->
@@ -95,7 +95,7 @@ import { SITE_CONFIG, SERVICES, MATERIALS, NAVIGATION } from '../utils/constants
           {SERVICES.map((service) => (
             <li>
               <a 
-                href={`/tepatlaser/${service.slug}/`}
+                href={`${service.slug}/`}
                 class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
               >
                 <svg class="w-4 h-4 mr-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ import { SITE_CONFIG, SERVICES, MATERIALS, NAVIGATION } from '../utils/constants
           {MATERIALS.map((material) => (
             <li>
               <a 
-                href={`/tepatlaser/${material.slug}/`}
+                href={`${material.slug}/`}
                 class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
               >
                 <svg class="w-4 h-4 mr-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
