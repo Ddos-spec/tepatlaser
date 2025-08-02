@@ -84,21 +84,101 @@ const jsonLd = material ? {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              Aplikasi Umum {material.name}
+              Karakteristik {material.name}
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Galeri proyek yang menggunakan {material.name} sebagai material utama.
+              Material transparan premium dengan kejernihan tinggi dan kemudahan pengolahan
             </p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {material.applications.map((app, index) => (
-              <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={`/images/acrylic-app-${index + 1}.webp`} alt={app} class="w-full h-64 object-cover"/>
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold mb-2">{app}</h3>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Transparansi Tinggi</h3>
+              <p class="text-gray-600">Kejernihan optik superior hingga 92% untuk aplikasi display premium</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Mudah Dibentuk</h3>
+              <p class="text-gray-600">Fleksibilitas tinggi untuk berbagai bentuk dan desain kompleks</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Tahan Lama</h3>
+              <p class="text-gray-600">Ketahanan UV dan tidak mudah menguning untuk penggunaan jangka panjang</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      
+
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                Spesifikasi Teknis
+              </h2>
+              <div class="space-y-4">
+                <div class="flex justify-between py-3 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">Ketebalan</span>
+                  <span class="text-gray-600">{material.thickness}</span>
+                </div>
+                <div class="flex justify-between py-3 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">Ukuran Standard</span>
+                  <span class="text-gray-600">1220 x 2440 mm</span>
+                </div>
+                <div class="flex justify-between py-3 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">Toleransi Cutting</span>
+                  <span class="text-gray-600">±0.02 mm</span>
+                </div>
+                <div class="flex justify-between py-3 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">Finishing</span>
+                  <span class="text-gray-600">Polished Edge</span>
+                </div>
+                <div class="flex justify-between py-3 border-b border-gray-200">
+                  <span class="font-medium text-gray-900">Warna Tersedia</span>
+                  <span class="text-gray-600">Clear, Opal, Warna Custom</span>
                 </div>
               </div>
-            ))}
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Produksi Umum
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Beberapa contoh hasil produksi umum menggunakan material ini.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <img src="/images/akrilik (4).webp" alt="Produksi Umum 1" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img src="/images/akrilik (3).webp" alt="Produksi Umum 2" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img src="/images/akrilik (2).webp" alt="Produksi Umum 3" class="w-full h-48 object-cover rounded-lg shadow-md"/>
+            <img src="/images/akrilik (1).webp" alt="Produksi Umum 4" class="w-full h-48 object-cover rounded-lg shadow-md"/>
           </div>
         </div>
       </section>

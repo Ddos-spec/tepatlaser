@@ -48,10 +48,10 @@ const jsonLd = {
 <BaseLayout 
   title={`${post.title} | Blog LaserCut Pro`}
   description={post.excerpt}
-  keywords={`${post.title.toLowerCase()}, laser cutting, cnc router, ${post.category.toLowerCase()}`}
+  keywords={post.keywords || `${post.title.toLowerCase()}, laser cutting, cnc router, ${post.category.toLowerCase()}`}
   image={post.image}
   type="article"
-  jsonLd={jsonLd}
+  jsonLd={post.schema || jsonLd}
 >
   <Header slot="header" />
   

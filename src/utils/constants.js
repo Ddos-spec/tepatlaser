@@ -394,7 +394,20 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "5 menit",
     publishDate: "2025-01-15",
-    image: "/images/acp.webp"
+    image: "/images/acp.webp",
+    keywords: "memilih material laser cutting, panduan material laser, bahan laser cutting indonesia",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cara Memilih Material yang Tepat untuk Laser Cutting di indonesia",
+      "description": "Panduan lengkap memilih material yang sesuai untuk project laser cutting Anda di indonesia",
+      "image": "/images/acp.webp",
+      "datePublished": "2025-01-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 2,
@@ -404,7 +417,20 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "7 menit",
     publishDate: "2025-01-10",
-    image: "/images/laserfiber.webp"
+    image: "/images/laserfiber.webp",
+    keywords: "perbedaan laser co2 fiber, laser co2 vs fiber, teknologi laser cutting",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Perbedaan Utama Antara Laser CO2 dan Laser Fiber untuk Bisnis Anda",
+      "description": "Analisis teknis dan aplikatif antara teknologi laser CO2 dan Fiber untuk kebutuhan bisnis Anda",
+      "image": "/images/laserfiber.webp",
+      "datePublished": "2025-01-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 3,
@@ -414,7 +440,20 @@ export const BLOG_POSTS = [
     category: "Industry",
     readTime: "6 menit",
     publishDate: "2025-01-05",
-    image: "/images/cncrouter.webp"
+    image: "/images/cncrouter.webp",
+    keywords: "tren industri kreatif 2025, peluang laser cutting, bisnis laser cutting indonesia",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Tren Industri Kreatif indonesia 2025: Peluang Laser Cutting",
+      "description": "Insight tentang perkembangan industri kreatif di indonesia dan peluang bisnis laser cutting",
+      "image": "/images/cncrouter.webp",
+      "datePublished": "2025-01-05",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 4,
@@ -424,7 +463,20 @@ export const BLOG_POSTS = [
     category: "Tips",
     readTime: "8 menit",
     publishDate: "2025-01-20",
-    image: "/images/co2.webp"
+    image: "/images/co2.webp",
+    keywords: "kesalahan memilih jasa laser cutting, tips laser cutting, ahli laser cutting indonesia",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "5 Kesalahan Umum Saat Memilih Jasa Laser Cutting di indonesia",
+      "description": "Hindari kesalahan fatal yang bisa merugikan project Anda dengan tips dari ahli laser cutting indonesia",
+      "image": "/images/co2.webp",
+      "datePublished": "2025-01-20",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 5,
@@ -434,7 +486,20 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "10 menit",
     publishDate: "2025-01-18",
-    image: "/images/engraving.webp"
+    image: "/images/engraving.webp",
+    keywords: "panduan desain laser cutting, menyiapkan file laser cutting, desain akurat laser",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Panduan Lengkap: Cara Menyiapkan File Desain untuk Laser Cutting Akurat",
+      "description": "Tutorial step-by-step menyiapkan file desain yang optimal untuk hasil laser cutting terbaik dan akurat",
+      "image": "/images/engraving.webp",
+      "datePublished": "2025-01-18",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 6,
@@ -444,7 +509,20 @@ export const BLOG_POSTS = [
     category: "Analysis",
     readTime: "9 menit",
     publishDate: "2025-01-08",
-    image: "/images/pvc.webp"
+    image: "/images/pvc.webp",
+    keywords: "analisis biaya laser cutting, efisiensi laser cutting, laser cutting vs tradisional",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Analisis Biaya: Apakah Laser Cutting Lebih Efisien daripada Metode Tradisional?",
+      "description": "Breakdown biaya komprehensif membandingkan laser cutting dengan metode konvensional untuk berbagai material",
+      "image": "/images/pvc.webp",
+      "datePublished": "2025-01-08",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 7,
@@ -454,7 +532,20 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "12 menit",
     publishDate: "2025-01-14",
-    image: "/images/galvo.webp"
+    image: "/images/galvo.webp",
+    keywords: "teknik laser engraving, personalisasi massal, branding produk laser",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Teknik Laser Engraving Tercepat untuk Personalisasi Massal",
+      "description": "Eksplorasi teknik laser engraving cepat pada berbagai material untuk menciptakan branding produk yang memorable",
+      "image": "/images/galvo.webp",
+      "datePublished": "2025-01-14",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   },
   {
     id: 8,
@@ -464,7 +555,20 @@ export const BLOG_POSTS = [
     category: "Case Study",
     readTime: "11 menit",
     publishDate: "2025-01-12",
-    image: "/images/Ply Wood.webp"
+    image: "/images/Ply Wood.webp",
+    keywords: "cnc router furniture, industri furniture custom, teknologi cnc router",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Studi Kasus: Bagaimana CNC Router Mengubah Industri Furniture Custom di indonesia",
+      "description": "Analisis mendalam bagaimana teknologi CNC Router merevolusi industri furniture custom di indonesia dan sekitarnya",
+      "image": "/images/Ply Wood.webp",
+      "datePublished": "2025-01-12",
+      "author": {
+        "@type": "Organization",
+        "name": "Tepat Laser"
+      }
+    }
   }
 ];
 
