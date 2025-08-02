@@ -29,7 +29,7 @@ const metaTags = generateMetaTags({
   publishedTime: "2025-01-01T00:00:00Z",
   modifiedTime: "2025-07-27T10:00:00Z", // Update tanggal modifikasi terakhir
   author: SITE_CONFIG.author
-});
+} as { title: string; description: string; keywords: string; url: string; type: string; image: string; publishedTime: string; modifiedTime: string; author: string });
 
 // 2. GENERATE STRUCTURED DATA (JSON-LD)
 // Schema untuk FAQ dan Review juga digenerate dari seo.ts untuk hasil SEO yang lebih kaya.
@@ -41,11 +41,7 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
   title={metaTags.title}
   description={metaTags.description}
   keywords={metaTags.keywords}
-  url={metaTags.canonical}
-  image={metaTags.image}
-  publishedTime={metaTags.publishedTime}
-  modifiedTime={metaTags.modifiedTime}
-  author={metaTags.author}
+  url={metaTags.url}
   jsonLd={[faqSchema, reviewSchema]}
 >
   <Header slot="header" />

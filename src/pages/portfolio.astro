@@ -184,7 +184,7 @@ const jsonLd = {
       const filter = button.getAttribute('data-filter');
       
       portfolioItems.forEach(item => {
-        const htmlItem = item;
+        const htmlItem = item as HTMLElement;
         if (filter === 'all' || htmlItem.getAttribute('data-category') === filter) {
           htmlItem.style.display = 'block';
         } else {
@@ -194,11 +194,11 @@ const jsonLd = {
     });
   });
 
-  const modal = document.getElementById('portfolio-modal');
+  const modal = document.getElementById('portfolio-modal') as HTMLElement;
   const modalContent = document.getElementById('modal-content');
 
-  function openModal(id) {
-    const portfolioData = {
+  function openModal(id: any) {
+    const portfolioData: {[key: number]: any} = {
       1: {
         title: "Signage Hotel Bintang 5 Jakarta",
         category: "Commercial",
@@ -268,7 +268,7 @@ const jsonLd = {
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-3">Spesifikasi Project</h3>
             <ul class="space-y-2">
-              ${item.specifications.map((spec) => `
+              ${item.specifications.map((spec: any) => `
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -321,8 +321,8 @@ const jsonLd = {
     }
   }
 
-  window.openModal = openModal;
-  window.closeModal = closeModal;
+  (window as any).openModal = openModal;
+  (window as any).closeModal = closeModal;
 
   if (modal) {
     modal.addEventListener('click', (e) => {

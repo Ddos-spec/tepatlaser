@@ -22,7 +22,7 @@ const metaTags = service ? generateMetaTags({
   publishedTime: "2025-01-01T00:00:00Z",
   modifiedTime: "2025-07-27T10:00:00Z",
   author: SITE_CONFIG.author
-}) : null;
+} as { title: string; description: string; keywords: string; url: string; type: string; image: string; publishedTime: string; modifiedTime: string; author: string }) : null;
 
 // Structured Data
 const serviceSchema = service ? generateServiceSchema(service) : null;
@@ -34,13 +34,7 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
 ---
 
 {service && metaTags ? (
-  <BaseLayout 
-    title={metaTags.title}
-    description={metaTags.description}
-    keywords={metaTags.keywords}
-    url={metaTags.canonical}
-    jsonLd={[serviceSchema, breadcrumbSchema].filter(Boolean)}
-  >
+  <BaseLayout {...metaTags} jsonLd={[serviceSchema, breadcrumbSchema].filter(Boolean)}>
     <Header slot="header" />
   
     <main>

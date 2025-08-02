@@ -1,16 +1,44 @@
 import { SITE_CONFIG } from './constants.js';
 
-export function generateMetaTags({
-  title,
-  description,
-  keywords,
-  image,
-  url,
-  type = 'website',
-  publishedTime,
-  modifiedTime,
-  author
-} = {}) {
+/**
+ * @param {object} params
+ * @param {string} params.title
+ * @param {string} params.description
+ * @param {string} params.keywords
+ * @param {string} [params.image]
+ * @param {string} params.url
+ * @param {string} [params.type='website']
+ * @param {string} [params.publishedTime]
+ * @param {string} [params.modifiedTime]
+ * @param {string} [params.author]
+ */
+/**
+ * @typedef {object} MetaTags
+ * @property {string} title
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} [image]
+ * @property {string} url
+ * @property {string} [type]
+ * @property {string} [publishedTime]
+ * @property {string} [modifiedTime]
+ * @property {string} [author]
+ */
+
+/**
+ * @param {object} params
+ * @param {string} params.title
+ * @param {string} params.description
+ * @param {string} params.keywords
+ * @param {string} [params.image]
+ * @param {string} params.url
+ * @param {string} [params.type='website']
+ * @param {string} [params.publishedTime]
+ * @param {string} [params.modifiedTime]
+ * @param {string} [params.author]
+ * @returns {MetaTags}
+ */
+export function generateMetaTags({ title, description, keywords, image, url, type = 'website', publishedTime, modifiedTime, author } = {}) {
   const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.title;
   const fullDescription = description || SITE_CONFIG.description;
   const fullUrl = url ? `${SITE_CONFIG.url}${url}` : SITE_CONFIG.url;
@@ -26,7 +54,6 @@ export function generateMetaTags({
     keywords: fullKeywords,
     url: fullUrl,
     type: type,
-    canonical: fullUrl,
     openGraph: {
       title: fullTitle,
       description: fullDescription,

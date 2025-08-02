@@ -14,7 +14,7 @@ const metaTags = generateMetaTags({
   keywords: "kontak laser cutting, konsultasi gratis, quote laser cutting, alamat bandung, whatsapp laser cutting",
   url: "/contact",
   type: "website"
-});
+} as { title: string; description: string; keywords: string; url: string; type: string });
 
 // Structured Data
 const breadcrumbSchema = generateBreadcrumbSchema([
@@ -27,7 +27,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
   title={metaTags.title}
   description={metaTags.description}
   keywords={metaTags.keywords}
-  url={metaTags.canonical}
+  url={metaTags.url}
   jsonLd={[breadcrumbSchema]}
 >
   <Header slot="header" />
@@ -547,7 +547,7 @@ Mohon informasi lebih lanjut dan quote untuk project ini. Terima kasih!`;
       const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
       inputs.forEach(input => {
         input.addEventListener('blur', function() {
-          const currentInput = this as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+          const currentInput = this;
           if (currentInput.value.trim() === '') {
             currentInput.classList.add('border-red-500');
             currentInput.classList.remove('border-gray-300');
@@ -574,4 +574,3 @@ Mohon informasi lebih lanjut dan quote untuk project ini. Terima kasih!`;
     }
   });
 </script>
-
