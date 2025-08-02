@@ -1,49 +1,5 @@
 import { SITE_CONFIG } from './constants.js';
 
-interface MetaTagOptions {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-  url?: string;
-  type?: 'website' | 'article' | 'blog' | 'service';
-  publishedTime?: string;
-  modifiedTime?: string;
-  author?: string;
-}
-
-interface MetaTags {
-  title: string;
-  description: string;
-  keywords: string;
-  canonical: string;
-  url: string;
-  type: string;
-  openGraph: {
-    title: string;
-    description: string;
-    url: string;
-    image: string;
-    type: string;
-    siteName: string;
-    locale: string;
-    publishedTime?: string;
-    modifiedTime?: string;
-    author?: string;
-  };
-  twitter: {
-    card: string;
-    title: string;
-    description: string;
-    image: string;
-  };
-}
-
-/**
- * Generate meta tags untuk SEO
- * @param options - Meta tag options
- * @returns Complete meta tags object
- */
 export function generateMetaTags({
   title,
   description,
@@ -54,13 +10,12 @@ export function generateMetaTags({
   publishedTime,
   modifiedTime,
   author
-}: MetaTagOptions = {}): MetaTags {
+} = {}) {
   const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.title;
   const fullDescription = description || SITE_CONFIG.description;
   const fullUrl = url ? `${SITE_CONFIG.url}${url}` : SITE_CONFIG.url;
   const fullImage = image ? `${SITE_CONFIG.url}${image}` : `${SITE_CONFIG.url}/logo.webp`;
   
-  // Default keywords fallback
   const defaultKeywords = 'laser cutting, cnc router, laser fiber, laser co2, jabodetabek';
   const siteKeywords = SITE_CONFIG.keywords || defaultKeywords;
   const fullKeywords = keywords ? `${keywords}, ${siteKeywords}` : siteKeywords;
@@ -93,16 +48,7 @@ export function generateMetaTags({
   };
 }
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-/**
- * Generate FAQ Schema markup for structured data
- * @param faqItems Array of FAQ items 
- */
-export function generateFAQSchema(faqItems: FAQItem[]): object {
+export function generateFAQSchema(faqItems) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -117,18 +63,7 @@ export function generateFAQSchema(faqItems: FAQItem[]): object {
   };
 }
 
-interface Review {
-  name: string;
-  rating: number;
-  content: string;
-  company?: string;
-}
-
-/**
- * Generate Review Schema markup for structured data
- * @param reviews Array of review objects
- */
-export function generateReviewSchema(reviews: Review[]): object {
+export function generateReviewSchema(reviews) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization", 
@@ -159,16 +94,13 @@ export function generateReviewSchema(reviews: Review[]): object {
   };
 }
 
-function calculateAverageRating(reviews: Review[]): number {
+function calculateAverageRating(reviews) {
   if (!reviews || reviews.length === 0) return 5;
   const total = reviews.reduce((sum, review) => sum + review.rating, 0);
   return Number((total / reviews.length).toFixed(1));
 }
 
-/**
- * Generate JSON-LD untuk Schema.org
- */
-export function generateJsonLd(options: MetaTagOptions = {}): object {
+export function generateJsonLd(options = {}) {
   const fullTitle = options.title ? `${options.title} | ${SITE_CONFIG.name}` : SITE_CONFIG.title;
   const fullDescription = options.description || SITE_CONFIG.description;
   const fullUrl = options.url ? `${SITE_CONFIG.url}${options.url}` : SITE_CONFIG.url;
@@ -192,10 +124,7 @@ export function generateJsonLd(options: MetaTagOptions = {}): object {
   };
 }
 
-/**
- * Generate Service Schema
- */
-export function generateServiceSchema(service: {name: string; description: string; image?: string; price?: string}): object {
+export function generateServiceSchema(service) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -218,10 +147,7 @@ export function generateServiceSchema(service: {name: string; description: strin
   };
 }
 
-/**
- * Generate Breadcrumb Schema
- */
-export function generateBreadcrumbSchema(items: Array<{name: string; url: string}>): object {
+export function generateBreadcrumbSchema(items) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -237,10 +163,7 @@ export function generateBreadcrumbSchema(items: Array<{name: string; url: string
   };
 }
 
-/**
- * Generate Blog Post Schema
- */
-export function generateBlogPostSchema(post: {title: string; excerpt?: string; image?: string; publishDate: string; slug: string}): object {
+export function generateBlogPostSchema(post) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -268,14 +191,7 @@ export function generateBlogPostSchema(post: {title: string; excerpt?: string; i
   };
 }
 
-/**
- * Generate product structured data
- */
-export function generateProductSchema(material: {
-  name?: string;
-  description?: string;
-  image?: string;
-}): object {
+export function generateProductSchema(material) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -303,20 +219,8 @@ export function generateProductSchema(material: {
   };
 }
 
-interface City {
-  lat: number;
-  lng: number;
-}
-
-interface CityCoordinates {
-  [key: string]: City;
-}
-
-/**
- * Generate local business schema for Jabodetabek cities
- */
-export function generateLocalBusinessSchema(city: string = 'Jakarta'): object {
-  const cityCoordinates: CityCoordinates = {
+export function generateLocalBusinessSchema(city = 'Jakarta') {
+  const cityCoordinates = {
     'Jakarta': { lat: -6.2088, lng: 106.8456 },
     'Bogor': { lat: -6.5971, lng: 106.8060 },
     'Depok': { lat: -6.4025, lng: 106.7942 },
@@ -386,17 +290,8 @@ export function generateLocalBusinessSchema(city: string = 'Jakarta'): object {
   };
 }
 
-interface SitemapURL {
-  url: string;
-  priority: number;
-  changefreq: string;
-}
-
-/**
- * Generate sitemap URLs for Jabodetabek
- */
-export function generateSitemapUrls(): SitemapURL[] {
-  const baseUrls: SitemapURL[] = [
+export function generateSitemapUrls() {
+  const baseUrls = [
     { url: '/', priority: 1.0, changefreq: 'weekly' },
     { url: '/about', priority: 0.8, changefreq: 'monthly' },
     { url: '/contact', priority: 0.8, changefreq: 'monthly' },
@@ -431,10 +326,7 @@ export function generateSitemapUrls(): SitemapURL[] {
   return [...baseUrls, ...serviceUrls, ...materialUrls, ...locationUrls];
 }
 
-/**
- * Generate robots.txt content
- */
-export function generateRobotsTxt(): string {
+export function generateRobotsTxt() {
   return `User-agent: *
 Allow: /
 

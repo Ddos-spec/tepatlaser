@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   title: "Jasa Laser Cutting Profesional #1 indonesia - Akrilik, Kayu, Metal",
   description: "Laser cutting presisi tinggi & pengerjaan cepat di indonesia! Spesialis akrilik, kayu, metal dengan teknologi terdepan. 10+ tahun pengalaman, hasil akurat, garansi kualitas. Melayani Serang, Tangerang, Cilegon, Pandeglang, Lebak.",
   keywords: "laser cutting indonesia, cnc router serang, laser fiber tangerang, laser co2 cilegon, cutting akrilik pandeglang, potong kayu lebak, laser metal indonesia",
-  url: "https://ddos-spec.github.io/jasalasercutting/",
+  url: "https://ddos-spec.github.io/",
   author: "Jasa Cutting Laser Team",
   whatsapp: "6285165693179",
   email: "info@tepatlaser.com",
@@ -17,6 +17,7 @@ export const SITE_CONFIG = {
     instagram: "https://instagram.com/tepatlaser",
     facebook: "https://facebook.com/tepatlaser",
     youtube: "https://youtube.com/tepatlaser",
+    linkedin: "https://linkedin.com/company/tepatlaser",
   }
 };
 
@@ -64,7 +65,7 @@ export const SERVICES = [
       "Ideal untuk signage, dekorasi, prototyping"
     ],
     applications: ["Signage", "Dekorasi", "Prototyping", "Kemasan"],
-    image: "/jasalasercutting/images/co2.webp",
+    image: "/images/co2.webp",
     keywords: "jasa laser co2 indonesia, cutting akrilik serang, laser kayu tangerang, potong mdf cilegon, laser cutting pandeglang, cutting kain lebak, laser karet indonesia"
   },
   {
@@ -79,7 +80,7 @@ export const SERVICES = [
       "Tidak memerlukan bahan kimia berbahaya"
     ],
     applications: ["Industri", "Automotif", "Elektronik", "Branding"],
-    image: "/jasalasercutting/images/laserfiber.webp",
+    image: "/images/laserfiber.webp",
     keywords: "jasa laser fiber indonesia, cutting stainless serang, laser alumunium tangerang, potong besi cilegon, laser cutting metal pandeglang, marking tembaga lebak"
   },
   {
@@ -94,7 +95,7 @@ export const SERVICES = [
       "Finishing presisi untuk detail rumit"
     ],
     applications: ["Fasad", "Furniture", "Moulding", "Signage"],
-    image: "/jasalasercutting/images/cncrouter.webp",
+    image: "/images/cncrouter.webp",
     keywords: "jasa cnc router indonesia, cutting acp serang, laser grc tangerang, potong kayu cilegon, cnc router pandeglang, carving akrilik lebak"
   },
   {
@@ -109,7 +110,7 @@ export const SERVICES = [
       "Ideal untuk serial number, logo, QR code"
     ],
     applications: ["Branding", "Personalisasi", "Traceability", "Promosi"],
-    image: "/jasalasercutting/images/galvo.webp",
+    image: "/images/galvo.webp",
     keywords: "jasa galvo engraving indonesia, laser engraving serang, engrave tangerang, potong engraving cilegon, laser engrave pandeglang, branding produk lebak"
   }
 ];
@@ -122,7 +123,7 @@ export const MATERIALS = [
     description: "Material transparan berkualitas tinggi untuk berbagai aplikasi signage dan dekorasi",
     thickness: "1mm - 20mm",
     applications: ["Signage", "Display", "Dekorasi", "Prototyping"],
-    image: "/jasalasercutting/images/Acrylic.webp",
+    image: "/images/Acrylic.webp",
     keywords: "potong akrilik indonesia, cutting acrylic serang, laser acrylic tangerang, potong acrylic cilegon, cutting acrylic pandeglang"
   },
   {
@@ -132,7 +133,7 @@ export const MATERIALS = [
     description: "Kayu engineered dengan permukaan halus, ideal untuk painting dan aplikasi dekoratif",
     thickness: "3mm - 25mm",
     applications: ["Furniture", "Dekorasi", "Craft", "Model"],
-    image: "/jasalasercutting/images/mdf.webp",
+    image: "/images/mdf.webp",
     keywords: "potong mdf indonesia, laser cutting mdf serang, cutting mdf tangerang, potong mdf cilegon, laser mdf pandeglang"
   },
   {
@@ -142,7 +143,7 @@ export const MATERIALS = [
     description: "Kayu lapis berkualitas untuk kekuatan struktural dan tampilan alami yang menarik",
     thickness: "3mm - 25mm",
     applications: ["Furniture", "Dekorasi", "Kerajinan", "Interior"],
-    image: "/jasalasercutting/images/Ply Wood.webp",
+    image: "/images/Ply Wood.webp",
     keywords: "potong plywood indonesia, laser kayu serang, cutting multiplex tangerang, potong kayu cilegon, laser plywood pandeglang"
   },
   {
@@ -152,7 +153,7 @@ export const MATERIALS = [
     description: "Berbagai jenis logam untuk aplikasi industri, arsitektur, dan branding produk",
     thickness: "0.5mm - 10mm",
     applications: ["Industri", "Arsitektur", "Automotif", "Branding"],
-    image: "/jasalasercutting/images/metal.webp",
+    image: "/images/metal.webp",
     keywords: "potong stainless indonesia, laser cutting metal serang, cutting alumunium tangerang, potong besi cilegon, laser stainless pandeglang"
   },
   {
@@ -162,7 +163,7 @@ export const MATERIALS = [
     description: "Panel komposit ringan namun kuat untuk aplikasi fasad dan signage premium",
     thickness: "2mm - 6mm",
     applications: ["Signage", "Fasad", "Interior", "Eksterior"],
-    image: "/jasalasercutting/images/acp.webp",
+    image: "/images/acp.webp",
     keywords: "potong acp aluminium indonesia, cutting acp serang, acp laser tangerang, potong acp cilegon, cutting acp pandeglang"
   },
   {
@@ -172,7 +173,7 @@ export const MATERIALS = [
     description: "Cutting PVC custom untuk berbagai keperluan industri dan kreatif",
     thickness: "1mm - 10mm",
     applications: ["Signage", "Prototype", "Display", "Packaging"],
-    image: "/jasalasercutting/images/pvc.webp",
+    image: "/images/pvc.webp",
     keywords: "potong pvc indonesia, cutting pvc serang, laser pvc tangerang, potong pvc cilegon, cutting pvc pandeglang"
   },
   {
@@ -182,7 +183,7 @@ export const MATERIALS = [
     description: "Cutting GRC (Glassfibre Reinforced Concrete) untuk fasad dan ornamen bangunan",
     thickness: "8mm - 15mm",
     applications: ["Fasad", "Ornamen", "Panel", "Eksterior"],
-    image: "/jasalasercutting/images/grc.webp",
+    image: "/images/grc.webp",
     keywords: "potong grc indonesia, grc laser cutting serang, fasad grc tangerang, cutting grc cilegon, laser grc pandeglang"
   }
 ];
@@ -193,15 +194,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 1,
     title: "Cutting Plat Besi Custom",
     category: "Laser Fiber",
-    image: "/jasalasercutting/images/metal.webp",
+    image: "/images/metal.webp",
     description: "Pemotongan plat besi dengan presisi tinggi untuk komponen industri",
     client: "PT. Industri Manufaktur",
     material: "Plat Besi 5mm",
     technique: "Laser Fiber Cutting",
     gallery: [
-      "/jasalasercutting/images/metal.webp",
-      "/jasalasercutting/images/metal.webp",
-      "/jasalasercutting/images/metal.webp"
+      "/images/metal.webp",
+      "/images/metal.webp",
+      "/images/metal.webp"
     ],
     detailDescription: "Proyek pemotongan plat besi custom dengan ketebalan 5mm menggunakan teknologi laser fiber. Hasil potongan sangat presisi dengan toleransi ±0.1mm, cocok untuk komponen industri yang membutuhkan akurasi tinggi."
   },
@@ -209,15 +210,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 2,
     title: "Engraving Logo Perusahaan",
     category: "Galvo Engraving",
-    image: "/jasalasercutting/images/engraving.webp",
+    image: "/images/engraving.webp",
     description: "Engraving logo perusahaan pada berbagai material dengan detail tinggi",
     client: "CV. Karya Mandiri",
     material: "Stainless Steel",
     technique: "Galvo Laser Engraving",
     gallery: [
-      "/jasalasercutting/images/engraving.webp",
-      "/jasalasercutting/images/engraving.webp",
-      "/jasalasercutting/images/engraving.webp"
+      "/images/engraving.webp",
+      "/images/engraving.webp",
+      "/images/engraving.webp"
     ],
     detailDescription: "Engraving logo perusahaan dengan teknologi galvo laser pada material stainless steel. Hasil engraving sangat detail dan tahan lama, cocok untuk branding perusahaan yang berkualitas tinggi."
   },
@@ -225,15 +226,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 3,
     title: "Cutting Akrilik Dekoratif",
     category: "Laser CO2",
-    image: "/jasalasercutting/images/Acrylic.webp",
+    image: "/images/Acrylic.webp",
     description: "Pemotongan akrilik untuk keperluan dekorasi interior dengan desain custom",
     client: "Interior Design Studio",
     material: "Akrilik 8mm",
     technique: "CO2 Laser Cutting",
     gallery: [
-      "/jasalasercutting/images/Acrylic.webp",
-      "/jasalasercutting/images/Acrylic.webp",
-      "/jasalasercutting/images/Acrylic.webp"
+      "/tepatlaser/images/Acrylic.webp",
+      "/tepatlaser/images/Acrylic.webp",
+      "/tepatlaser/images/Acrylic.webp"
     ],
     detailDescription: "Pemotongan akrilik dekoratif dengan ketebalan 8mm menggunakan laser CO2. Menghasilkan potongan yang halus dan bersih tanpa crack, sempurna untuk aplikasi dekorasi interior yang elegan."
   },
@@ -241,15 +242,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 4,
     title: "CNC Router Kayu Jati",
     category: "CNC Router",
-    image: "/jasalasercutting/images/mdf.webp",
+    image: "/images/mdf.webp",
     description: "Pengerjaan kayu jati dengan CNC router untuk furniture custom",
     client: "Furniture Artisan",
     material: "Kayu Jati Solid",
     technique: "CNC Router Machining",
     gallery: [
-      "/jasalasercutting/images/mdf.webp",
-      "/jasalasercutting/images/mdf.webp",
-      "/jasalasercutting/images/mdf.webp"
+      "/tepatlaser/images/mdf.webp",
+      "/tepatlaser/images/mdf.webp",
+      "/tepatlaser/images/mdf.webp"
     ],
     detailDescription: "Pengerjaan kayu jati solid menggunakan CNC router dengan presisi tinggi. Menghasilkan detail ukiran dan bentuk yang kompleks sesuai desain custom untuk furniture berkualitas premium."
   },
@@ -257,15 +258,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 5,
     title: "Cutting Plat Aluminium",
     category: "Laser Fiber",
-    image: "/jasalasercutting/images/furnituremetal.webp",
+    image: "/images/furnituremetal.webp",
     description: "Pemotongan plat aluminium untuk komponen otomotif",
     client: "PT. Otomotif Nusantara",
     material: "Aluminium 3mm",
     technique: "Fiber Laser Cutting",
     gallery: [
-      "/jasalasercutting/images/furnituremetal.webp",
-      "/jasalasercutting/images/furnituremetal.webp",
-      "/jasalasercutting/images/furnituremetal.webp"
+      "/tepatlaser/images/furnituremetal.webp",
+      "/tepatlaser/images/furnituremetal.webp",
+      "/tepatlaser/images/furnituremetal.webp"
     ],
     detailDescription: "Pemotongan plat aluminium dengan ketebalan 3mm untuk komponen otomotif. Menggunakan laser fiber yang menghasilkan potongan bersih tanpa burr dan presisi tinggi sesuai standar industri otomotif."
   },
@@ -273,15 +274,15 @@ export const PORTFOLIO_PROJECTS = [
     id: 6,
     title: "Engraving Kayu Mahoni",
     category: "Laser CO2",
-    image: "/jasalasercutting/images/singagehote.webp",
+    image: "/images/singagehote.webp",
     description: "Engraving detail pada kayu mahoni untuk souvenir eksklusif",
     client: "Souvenir Premium",
     material: "Kayu Mahoni",
     technique: "CO2 Laser Engraving",
     gallery: [
-      "/jasalasercutting/images/singagehote.webp",
-      "/jasalasercutting/images/singagehote.webp",
-      "/jasalasercutting/images/singagehote.webp"
+      "/tepatlaser/images/singagehote.webp",
+      "/tepatlaser/images/singagehote.webp",
+      "/tepatlaser/images/singagehote.webp"
     ],
     detailDescription: "Engraving detail pada kayu mahoni premium menggunakan laser CO2. Menghasilkan detail ukiran yang halus dan artistik, cocok untuk souvenir eksklusif dan produk kerajinan berkualitas tinggi."
   }
@@ -295,7 +296,7 @@ export const TESTIMONIALS = [
     position: "Project Manager",
     content: "Kualitas laser cutting terbaik yang pernah kami gunakan di indonesia. Presisi tinggi dan hasil sempurna untuk semua project signage kami.",
     rating: 5,
-    image: "/jasalasercutting/images/budisantoso.webp"
+    image: "/images/budisantoso.webp"
   },
   {
     id: 2,
@@ -304,7 +305,7 @@ export const TESTIMONIALS = [
     position: "Lead Architect",
     content: "Pelayanan profesional dan hasil cutting yang sangat memuaskan. Recommended untuk semua kebutuhan laser cutting di indonesia.",
     rating: 5,
-    image: "/jasalasercutting/images/Sari Dewi.webp"
+    image: "/images/Sari Dewi.webp"
   },
   {
     id: 3,
@@ -313,7 +314,7 @@ export const TESTIMONIALS = [
     position: "Owner",
     content: "Sudah 3 tahun menggunakan jasa Jasa Cutting Laser. Selalu puas dengan kualitas dan ketepatan waktu pengerjaan, pengiriman ke Cilegon juga cepat.",
     rating: 5,
-    image: "/jasalasercutting/images/Ahmad Rizki.webp"
+    image: "/images/Ahmad Rizki.webp"
   }
 ];
 
@@ -324,7 +325,7 @@ export const PORTFOLIO = [
     category: "Commercial",
     material: "ACP Aluminium",
     service: "CNC Router",
-    image: "/jasalasercutting/images/singagehote.webp",
+    image: "/images/singagehote.webp",
     description: "Pembuatan signage premium untuk hotel bintang 5 di Serang dengan detail presisi tinggi"
   },
   {
@@ -333,7 +334,7 @@ export const PORTFOLIO = [
     category: "Industrial",
     material: "Stainless Steel",
     service: "Laser Fiber",
-    image: "/jasalasercutting/images/furnituremetal.webp",
+    image: "/images/furnituremetal.webp",
     description: "Cutting furniture stainless steel custom untuk restaurant modern di Tangerang"
   },
   {
@@ -342,7 +343,7 @@ export const PORTFOLIO = [
     category: "Retail",
     material: "Acrylic",
     service: "Laser CO2",
-    image: "/jasalasercutting/images/displyacrylic.webp",
+    image: "/images/displyacrylic.webp",
     description: "Display acrylic premium untuk toko retail di Cilegon dengan engraving logo"
   },
   {
@@ -351,7 +352,7 @@ export const PORTFOLIO = [
     category: "Manufacturing",
     material: "PVC",
     service: "CNC Router",
-    image: "/jasalasercutting/images/prototype.webp",
+    image: "/images/prototype.webp",
     description: "Prototype komponen industri dengan presisi tinggi menggunakan PVC untuk klien di Pandeglang"
   }
 ];
@@ -393,7 +394,7 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "5 menit",
     publishDate: "2025-01-15",
-    image: "/jasalasercutting/images/acp.webp"
+    image: "/images/acp.webp"
   },
   {
     id: 2,
@@ -403,7 +404,7 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "7 menit",
     publishDate: "2025-01-10",
-    image: "/jasalasercutting/images/laserfiber.webp"
+    image: "/images/laserfiber.webp"
   },
   {
     id: 3,
@@ -413,7 +414,7 @@ export const BLOG_POSTS = [
     category: "Industry",
     readTime: "6 menit",
     publishDate: "2025-01-05",
-    image: "/jasalasercutting/images/cncrouter.webp"
+    image: "/images/cncrouter.webp"
   },
   {
     id: 4,
@@ -423,7 +424,7 @@ export const BLOG_POSTS = [
     category: "Tips",
     readTime: "8 menit",
     publishDate: "2025-01-20",
-    image: "/jasalasercutting/images/co2.webp"
+    image: "/images/co2.webp"
   },
   {
     id: 5,
@@ -433,7 +434,7 @@ export const BLOG_POSTS = [
     category: "Tutorial",
     readTime: "10 menit",
     publishDate: "2025-01-18",
-    image: "/jasalasercutting/images/engraving.webp"
+    image: "/images/engraving.webp"
   },
   {
     id: 6,
@@ -443,7 +444,7 @@ export const BLOG_POSTS = [
     category: "Analysis",
     readTime: "9 menit",
     publishDate: "2025-01-08",
-    image: "/jasalasercutting/images/pvc.webp"
+    image: "/images/pvc.webp"
   },
   {
     id: 7,
@@ -453,7 +454,7 @@ export const BLOG_POSTS = [
     category: "Technical",
     readTime: "12 menit",
     publishDate: "2025-01-14",
-    image: "/jasalasercutting/images/galvo.webp"
+    image: "/images/galvo.webp"
   },
   {
     id: 8,
@@ -463,7 +464,7 @@ export const BLOG_POSTS = [
     category: "Case Study",
     readTime: "11 menit",
     publishDate: "2025-01-12",
-    image: "/jasalasercutting/images/Ply Wood.webp"
+    image: "/images/Ply Wood.webp"
   }
 ];
 
@@ -482,7 +483,7 @@ export const getImagePath = (imagePath) => {
   
   // For GitHub Pages deployment
   if (import.meta.env.PROD) {
-    return `/jasalasercutting/${cleanPath}`;
+    return `/${cleanPath}`;
   }
   
   // For local development
@@ -495,7 +496,7 @@ export const getPageUrl = (path) => {
   
   // For GitHub Pages deployment
   if (import.meta.env.PROD) {
-    return `/jasalasercutting${cleanPath}`;
+    return `/tepatlaser${cleanPath}`;
   }
   
   // For local development

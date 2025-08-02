@@ -9,7 +9,7 @@ const sortedPosts = BLOG_POSTS.sort((a, b) => new Date(b.publishDate).getTime() 
 
 // Safely construct the base URL
 const baseUrl = Astro.site ? Astro.site.toString() : 'https://www.tepatlaser.com'; // Sesuaikan dengan URL produksi Anda
-const blogUrl = `${baseUrl}blog/`;
+const blogUrl = `/${baseUrl}blog/`;
 
 const jsonLd = {
   "@context": "https://schema.org",
