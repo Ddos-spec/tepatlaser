@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   author: "Jasa Cutting Laser Team",
   whatsapp: "6285165693179",
   email: "info@tepatlaser.com",
-  address: "Jl. Raya Serang No. 123, Kota Serang, indonesia",
+  address: "Jl. Bintaro Bsd no 1D parigi ( samping Sekolah SD Mentari Internasional School ), Tangerang Selatan, Banten, Indonesia",
   phone: "+62 851 6569 3179",
   businessHours: "Senin - Sabtu: 08.00 - 17.00 WIB",
   socialMedia: {
@@ -137,7 +137,7 @@ export const MATERIALS = [
     keywords: "potong mdf indonesia, laser cutting mdf serang, cutting mdf tangerang, potong mdf cilegon, laser mdf pandeglang"
   },
   {
-    id: "plywood",
+    id: "ply-wood-multiplex",
     name: "Plywood/Multiplex",
     slug: "material-ply-wood-multiplex",
     description: "Kayu lapis berkualitas untuk kekuatan struktural dan tampilan alami yang menarik",
