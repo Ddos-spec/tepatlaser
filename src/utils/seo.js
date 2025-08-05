@@ -123,19 +123,17 @@ const TOP_KEYWORDS = {
  * @returns {MetaTags}
  */
 export function generateMetaTags({ title, description, keywords, image, url, type = 'website', publishedTime, modifiedTime, author } = {}) {
+  // FIX: Menggunakan SITE_CONFIG.url dari astro.config.mjs, bukan dari constants.js
+  const baseUrl = SITE_CONFIG.url; // Ini akan di-override oleh Astro.site
   const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.title;
   const fullDescription = description || SITE_CONFIG.description;
-  const fullUrl = url ? `${SITE_CONFIG.url}${url}` : SITE_CONFIG.url;
-  const fullImage = image ? `${SITE_CONFIG.url}${image}` : `${SITE_CONFIG.url}/logo.webp`;
+  // URL sekarang akan absolut dan benar, dibangun oleh BaseLayout.astro
+  const fullUrl = url;
+  const fullImage = image;
   
-  // Enhanced default keywords with top performers
   const defaultKeywords = [
-    ...TOP_KEYWORDS.primary,
-    'laser cutting',
-    'cnc router', 
-    'laser fiber',
-    'laser co2',
-    'jabodetabek'
+    'jasa grafir laser', 'custom acrylic', 'jasa ukir laser',
+    'laser cut maket', 'laser cutting kayu', 'cnc cutting laser'
   ].join(', ');
   
   const siteKeywords = SITE_CONFIG.keywords || defaultKeywords;
