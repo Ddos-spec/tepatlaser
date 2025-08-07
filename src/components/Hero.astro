@@ -70,6 +70,7 @@ const {
           target={primaryCTALink.startsWith('http') ? '_blank' : '_self'}
           rel={primaryCTALink.startsWith('http') ? 'noopener noreferrer' : ''}
           class="btn-success text-lg px-8 py-4 w-full sm:w-auto transform hover:scale-105 shadow-xl"
+          onclick={primaryCTALink.includes('whatsapp.com') ? `return gtag_report_conversion('${primaryCTALink}');` : ''}
         >
           {primaryCTA}
         </a>

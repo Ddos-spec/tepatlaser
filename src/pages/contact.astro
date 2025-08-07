@@ -536,7 +536,10 @@ Mohon informasi lebih lanjut dan quote untuk project ini. Terima kasih!`;
         
         const whatsappUrl = `https://api.whatsapp.com/send?phone=6285165693179&text=${encodeURIComponent(message)}`;
         
-        window.open(whatsappUrl, '_blank');
+        // Call the conversion tracking function
+        if (typeof gtag_report_conversion === 'function') {
+          gtag_report_conversion(whatsappUrl);
+        }
         
         alert('Terima kasih! Anda akan diarahkan ke WhatsApp untuk melanjutkan konsultasi.');
         
