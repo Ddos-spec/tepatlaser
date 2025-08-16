@@ -12,11 +12,6 @@ export default defineConfig({
     sitemap() // Dan ini juga
   ],
   
-  // Enable Content Collections
-  experimental: {
-    contentCollections: true
-  },
-  
   vite: {
     resolve: {
       alias: {
