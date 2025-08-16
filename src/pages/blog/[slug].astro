@@ -44,7 +44,7 @@ const jsonLd = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": new URL(`blog/${post.data.slug}`, Astro.site).href
+    "@id": new URL(`blog/${post.slug}`, Astro.site).href
   }
 };
 ---
