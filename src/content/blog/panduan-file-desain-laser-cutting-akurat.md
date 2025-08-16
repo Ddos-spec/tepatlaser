@@ -1,6 +1,5 @@
 ---
 title: "Panduan Lengkap: Cara Menyiapkan File Desain untuk Laser Cutting Akurat"
-slug: "panduan-file-desain-laser-cutting-akurat"
 excerpt: "Tutorial step-by-step menyiapkan file desain yang optimal untuk hasil laser cutting terbaik dan akurat"
 category: "Tutorial"
 readTime: "10 menit"
