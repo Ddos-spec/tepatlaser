@@ -1,6 +1,5 @@
 ---
 title: "Cara Memilih Material yang Tepat untuk Laser Cutting di indonesia"
-slug: "cara-memilih-material-laser-cutting-indonesia"
 excerpt: "Panduan lengkap memilih material yang sesuai untuk project laser cutting Anda di indonesia"
 category: "Tutorial"
 readTime: "5 menit"
