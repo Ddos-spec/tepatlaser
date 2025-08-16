@@ -25,11 +25,11 @@ const relatedPosts = allPosts
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": post.title,
-  "description": post.excerpt,
-  "image": new URL(post.image, Astro.site).href,
-  "datePublished": post.publishDate,
-  "dateModified": post.publishDate,
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "image": new URL(post.data.image, Astro.site).href,
+  "datePublished": post.data.publishDate,
+  "dateModified": post.data.publishDate,
   "author": {
     "@type": "Organization",
     "name": "LaserCut Pro"
@@ -44,7 +44,7 @@ const jsonLd = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": new URL(`blog/${post.slug}`, Astro.site).href
+    "@id": new URL(`blog/${post.data.slug}`, Astro.site).href
   }
 };
 ---
