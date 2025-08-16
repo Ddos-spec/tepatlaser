@@ -1,6 +1,5 @@
 ---
 title: "Tren Industri Kreatif indonesia 2025: Peluang Laser Cutting"
-slug: "tren-industri-kreatif-indonesia-2025"
 excerpt: "Insight tentang perkembangan industri kreatif di indonesia dan peluang bisnis laser cutting"
 category: "Industry"
 readTime: "6 menit"
