@@ -1,6 +1,5 @@
 ---
 title: "Teknik Laser Engraving Tercepat untuk Personalisasi Massal"
-slug: "teknik-laser-engraving-personalisasi-massal"
 excerpt: "Eksplorasi teknik laser engraving cepat pada berbagai material untuk menciptakan branding produk yang memorable"
 category: "Technical"
 readTime: "12 menit"
