@@ -1,6 +1,5 @@
 ---
 title: "Perbedaan Utama Antara Laser CO2 dan Laser Fiber untuk Bisnis Anda"
-slug: "perbedaan-laser-co2-dan-laser-fiber"
 excerpt: "Analisis teknis dan aplikatif antara teknologi laser CO2 dan Fiber untuk kebutuhan bisnis Anda"
 category: "Technical"
 readTime: "7 menit"
