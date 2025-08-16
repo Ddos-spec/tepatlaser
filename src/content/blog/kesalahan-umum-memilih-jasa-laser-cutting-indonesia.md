@@ -1,6 +1,5 @@
 ---
 title: "5 Kesalahan Umum Saat Memilih Jasa Laser Cutting di indonesia"
-slug: "kesalahan-umum-memilih-jasa-laser-cutting-indonesia"
 excerpt: "Hindari kesalahan fatal yang bisa merugikan project Anda dengan tips dari ahli laser cutting indonesia"
 category: "Tips"
 readTime: "8 menit"
