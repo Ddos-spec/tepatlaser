@@ -1,6 +1,5 @@
 ---
 title: "Analisis Biaya: Apakah Laser Cutting Lebih Efisien daripada Metode Tradisional?"
-slug: "analisis-biaya-laser-cutting-vs-tradisional"
 excerpt: "Breakdown biaya komprehensif membandingkan laser cutting dengan metode konvensional untuk berbagai material"
 category: "Analysis"
 readTime: "9 menit"
