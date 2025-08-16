@@ -2,10 +2,13 @@
 import BaseLayout from '../../components/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { BLOG_POSTS } from '../../utils/constants.js';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts from Content Collections
+const allPosts = await getCollection('blog');
 
 // Sort blog posts by date (newest first)
-const sortedPosts = BLOG_POSTS.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 
 // Safely construct the base URL
 const baseUrl = Astro.site ? Astro.site.toString() : 'https://www.tepatlaser.com'; // Sesuaikan dengan URL produksi Anda
