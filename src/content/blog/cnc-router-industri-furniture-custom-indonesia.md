@@ -1,6 +1,5 @@
 ---
 title: "Studi Kasus: Bagaimana CNC Router Mengubah Industri Furniture Custom di indonesia"
-slug: "cnc-router-industri-furniture-custom-indonesia"
 excerpt: "Analisis mendalam bagaimana teknologi CNC Router merevolusi industri furniture custom di indonesia dan sekitarnya"
 category: "Case Study"
 readTime: "11 menit"
