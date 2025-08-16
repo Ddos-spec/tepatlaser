@@ -50,12 +50,12 @@ const jsonLd = {
 ---
 
 <BaseLayout 
-  title={`${post.title} | Blog LaserCut Pro`}
-  description={post.excerpt}
-  keywords={post.keywords || `${post.title.toLowerCase()}, laser cutting, cnc router, ${post.category.toLowerCase()}`}
-  image={post.image}
+  title={`${post.data.title} | Blog LaserCut Pro`}
+  description={post.data.excerpt}
+  keywords={post.data.keywords || `${post.data.title.toLowerCase()}, laser cutting, cnc router, ${post.data.category.toLowerCase()}`}
+  image={post.data.image}
   type="article"
-  jsonLd={post.schema || jsonLd}
+  jsonLd={post.data.schema || jsonLd}
 >
   <Header slot="header" />
   
