@@ -15,7 +15,8 @@ export const SITE_CONFIG = {
   socialMedia: {
     facebook: "https://www.facebook.com/profile.php?id=100054220779104",
     instagram: "https://www.instagram.com/jasalasercutting.tangsel/",
-    youtube: "https://www.youtube.com/@heriasari4189",    
+    youtube: "https://www.youtube.com/@heriasari4189",
+    linkedin: "#"
   }
 };
 
