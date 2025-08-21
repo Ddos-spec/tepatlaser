@@ -1,19 +1,17 @@
 ---
 title: "Laser Cutting: Solusi Presisi untuk Berbagai Kebutuhan Anda"
-description: "Berikut adalah contoh artikel blog SEO-friendly sesuai dengan spesifikasi yang Anda berikan:"
-pubDate: "2025-08-18"
+excerpt: "Pernahkah Anda membayangkan sebuah teknologi yang mampu memotong berbagai material dengan tingkat presisi yang luar biasa? Itulah laser cutting, sebuah solusi modern yang kini semakin populer di berbagai industri."
+publishDate: "2025-08-18"
 category: "Teknologi"
-tags: ["laser cutting","jasa laser","harga laser cutting"]
 image: "/images/blog/laser-cutting-solusi-presisi-untuk-berbagai-kebutu.webp"
 readTime: "8 menit baca"
-author: "Tim tepatlaser"
-draft: false
 keywords: "laser cutting, jasa laser, harga laser cutting"
 schema:
   "@context": "https://schema.org"
   "@type": "Article"
   "headline": "Laser Cutting: Solusi Presisi untuk Berbagai Kebutuhan Anda"
-  "description": "Berikut adalah contoh artikel blog SEO-friendly sesuai dengan spesifikasi yang Anda berikan:"
+  "description": "Pernahkah Anda membayangkan sebuah teknologi yang mampu memotong berbagai material dengan tingkat presisi yang luar biasa? Itulah laser cutting, sebuah solusi modern yang kini semakin populer di berbagai industri."
+  "image": "/images/blog/laser-cutting-solusi-presisi-untuk-berbagai-kebutu.webp"
   "datePublished": "2025-08-18"
   "author":
     "@type": "Organization"
