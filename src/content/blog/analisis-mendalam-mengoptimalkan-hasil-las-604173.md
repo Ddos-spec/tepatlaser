@@ -1,14 +1,10 @@
 ---
 title: "Analisis Mendalam: Mengoptimalkan Hasil Laser Cutting dengan Jasa Laser Profesional"
-description: "Laser cutting telah merevolusi dunia manufaktur, desain, dan seni. Kemampuannya untuk memotong berbagai material dengan presisi tinggi menjadikanny..."
 excerpt: "Laser cutting telah merevolusi dunia manufaktur, desain, dan seni. Kemampuannya untuk memotong berbagai material dengan presisi tinggi menjadikanny..." 
 publishDate: "2025-08-18"
 category: "Teknologi"
-tags: ["laser cutting","jasa laser","harga laser cutting"]
 image: "/images/blog/analisis-mendalam-mengoptimalkan-hasil-las-604173.webp"
 readTime: "8 menit baca"
-author: "Tim tepatlaser"
-draft: false
 keywords: "laser cutting, jasa laser, harga laser cutting"
 schema:
   "@context": "https://schema.org"
