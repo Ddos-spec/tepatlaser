@@ -24,7 +24,7 @@ export const NAVIGATION = [
   { name: 'Beranda', href: '/', active: false },
   { name: 'Tentang Kami', href: '/about/', active: false },
   { 
-    name: 'Layanan', 
+    name: 'Jasa',
     href: '#',
     active: false,
     submenu: [

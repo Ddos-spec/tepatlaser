@@ -28,7 +28,7 @@ const metaTags = service ? generateMetaTags({
 const serviceSchema = service ? generateServiceSchema(service) : null;
 const breadcrumbSchema = service ? generateBreadcrumbSchema([
   { name: 'Beranda', url: '/' },
-  { name: 'Layanan', url: '/#services' },
+  { name: 'Jasa', url: '/#services' },
   { name: service.name, url: `/${service.slug}/` }
 ]) : null;
 ---

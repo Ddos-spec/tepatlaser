@@ -1,17 +1,19 @@
 ---
 title: "Laser Cutting: Solusi Presisi dan Efisien untuk Berbagai Kebutuhan Anda"
-excerpt: "Di era modern ini, teknologi terus berkembang pesat, menawarkan berbagai solusi inovatif untuk berbagai kebutuhan industri dan personal. Salah satu teknologi yang semakin populer dan diminati adalah laser cutting."
-publishDate: "2025-08-18"
+description: "Berikut adalah contoh artikel blog SEO-friendly berdasarkan spesifikasi yang Anda berikan:"
+pubDate: "2025-08-18"
 category: "Teknologi"
+tags: ["laser cutting","jasa laser","harga laser cutting"]
 image: "/images/blog/laser-cutting-solusi-presisi-dan-efisien-untuk-ber.webp"
 readTime: "8 menit baca"
+author: "Tim tepatlaser"
+draft: false
 keywords: "laser cutting, jasa laser, harga laser cutting"
 schema:
   "@context": "https://schema.org"
   "@type": "Article"
   "headline": "Laser Cutting: Solusi Presisi dan Efisien untuk Berbagai Kebutuhan Anda"
-  "description": "Di era modern ini, teknologi terus berkembang pesat, menawarkan berbagai solusi inovatif untuk berbagai kebutuhan industri dan personal. Salah satu teknologi yang semakin populer dan diminati adalah laser cutting."
-  "image": "/images/blog/laser-cutting-solusi-presisi-dan-efisien-untuk-ber.webp"
+  "description": "Berikut adalah contoh artikel blog SEO-friendly berdasarkan spesifikasi yang Anda berikan:"
   "datePublished": "2025-08-18"
   "author":
     "@type": "Organization"

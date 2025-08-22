@@ -28,7 +28,7 @@ const metaTags = service ? generateMetaTags({
 const serviceSchema = service ? generateServiceSchema(service) : null;
 const breadcrumbSchema = service ? generateBreadcrumbSchema([
   { name: 'Beranda', url: '/' },
-  { name: 'Layanan', url: '/#services' },
+  { name: 'Jasa', url: '/#services' },
   { name: service.name, url: `/${service.slug}/` }
 ]) : null;
 ---
@@ -224,11 +224,11 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
     <Footer slot="footer" />
   </BaseLayout>
 ) : (
-  <BaseLayout title="Layanan Tidak Ditemukan" description="Halaman untuk layanan yang tidak ditemukan.">
+  <BaseLayout title="Jasa Tidak Ditemukan" description="Halaman untuk jasa yang tidak ditemukan.">
     <Header slot="header" />
     <main class="text-center py-20">
-      <h1 class="text-4xl font-bold mb-4">404 - Layanan Tidak Ditemukan</h1>
-      <p class="text-lg mb-8">Maaf, layanan yang Anda cari tidak ada atau telah dipindahkan.</p>
+      <h1 class="text-4xl font-bold mb-4">404 - Jasa Tidak Ditemukan</h1>
+      <p class="text-lg mb-8">Maaf, jasa yang Anda cari tidak ada atau telah dipindahkan.</p>
       <a href="/" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">
         Kembali ke Beranda
       </a>
