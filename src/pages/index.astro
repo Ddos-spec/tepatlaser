@@ -11,7 +11,7 @@ import Hero from '../components/Hero.astro';
 import CTA from '../components/CTA.astro';
 
 // Import data terpusat dari constants.js
-import { SERVICES, MATERIALS, TESTIMONIALS, PORTFOLIO, FAQ, SITE_CONFIG } from '../utils/constants.js';
+import { SERVICES, MATERIALS, TESTIMONIALS, PORTFOLIO, FAQ, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
 
 // Import fungsi-fungsi SEO dari seo.ts
 import { generateMetaTags, generateFAQSchema, generateReviewSchema } from '../utils/seo.js';
@@ -20,9 +20,9 @@ import { generateMetaTags, generateFAQSchema, generateReviewSchema } from '../ut
 // Semua meta tags (title, description, OG, Twitter card) dibuat secara dinamis
 // menggunakan fungsi generateMetaTags. Cukup isi data di bawah, sisanya diurus seo.ts.
 const metaTags = generateMetaTags({
-  title: "Jasa Laser Cutting Profesional & Akurat #1 indonesia - Akrilik, Kayu, Metal",
-  description: "Laser cutting presisi tinggi & pengerjaan cepat di indonesia! Spesialis akrilik, kayu, metal dengan teknologi terdepan. 10+ tahun pengalaman, hasil akurat, garansi kualitas. Melayani Serang, Tangerang, Cilegon.",
-  keywords: "jasa laser cutting indonesia, laser cutting serang, laser cutting tangerang, cnc router indonesia, laser fiber cutting, potong akrilik serang, potong kayu tangerang, cutting metal cilegon",
+  title: "Jasa Laser Fiber Jabodetabek | Cutting Metal Presisi hingga 20mm",
+  description: "Jasa laser fiber cutting metal terpercaya di Jakarta-Tangerang. Stainless steel, carbon steel, aluminium. Toleransi ±0.1mm, garansi kualitas. Quote gratis 24 jam!",
+  keywords: "jasa laser fiber, laser cutting jabodetabek, cutting metal presisi, laser cutting jakarta, laser cutting tangerang",
   url: "/", // URL canonical untuk halaman ini
   type: "website",
   image: "/images/logo.webp", // Gambar utama untuk social media sharing
@@ -125,12 +125,162 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
 
         <!-- Tombol Konsultasi untuk Teknologi -->
         <div class="text-center mt-16">
-          <a href="/contact/" class="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-green-700 hover:to-green-800 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-            </svg>
-            Konsultasi Gratis
+          <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+            Chat via WhatsApp
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian "How It Works" -->
+    <section id="how-it-works" class="section-padding bg-silver-light">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center px-6 py-3 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-600 font-semibold text-sm mb-6">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            Proses Kerja Kami
+          </div>
+          <h2 class="heading-lg text-charcoal mb-8">Proses Laser Cutting Terstruktur</h2>
+          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
+            Dari konsultasi hingga pengiriman, kami memastikan setiap langkah dilakukan dengan presisi dan transparansi untuk hasil terbaik.
+          </p>
+        </div>
+        <div class="relative">
+          <!-- Connector Line -->
+          <div class="absolute top-1/2 left-0 w-full h-0.5 bg-silver-mid hidden md:block"></div>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+            <!-- Step 1: Konsultasi -->
+            <div class="text-center flex flex-col items-center">
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
+                <span class="text-3xl font-bold text-blue-600">1</span>
+              </div>
+              <h3 class="text-lg font-bold text-charcoal mb-2">Konsultasi & Desain</h3>
+              <p class="text-sm text-graphite">Diskusikan kebutuhan project Anda dan finalisasi desain bersama tim ahli kami.</p>
+            </div>
+            <!-- Step 2: Quote -->
+            <div class="text-center flex flex-col items-center">
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
+                <span class="text-3xl font-bold text-blue-600">2</span>
+              </div>
+              <h3 class="text-lg font-bold text-charcoal mb-2">Penawaran Harga</h3>
+              <p class="text-sm text-graphite">Kami memberikan penawaran harga yang transparan dan kompetitif.</p>
+            </div>
+            <!-- Step 3: Produksi -->
+            <div class="text-center flex flex-col items-center">
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
+                <span class="text-3xl font-bold text-blue-600">3</span>
+              </div>
+              <h3 class="text-lg font-bold text-charcoal mb-2">Produksi Presisi</h3>
+              <p class="text-sm text-graphite">Proses cutting menggunakan mesin laser fiber tercanggih untuk hasil akurat.</p>
+            </div>
+            <!-- Step 4: Quality Control -->
+            <div class="text-center flex flex-col items-center">
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
+                <span class="text-3xl font-bold text-blue-600">4</span>
+              </div>
+              <h3 class="text-lg font-bold text-charcoal mb-2">Quality Control</h3>
+              <p class="text-sm text-graphite">Setiap hasil produksi melewati tahap QC ketat untuk memastikan sesuai spesifikasi.</p>
+            </div>
+            <!-- Step 5: Pengiriman -->
+            <div class="text-center flex flex-col items-center">
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
+                <span class="text-3xl font-bold text-blue-600">5</span>
+              </div>
+              <h3 class="text-lg font-bold text-charcoal mb-2">Pengiriman Cepat</h3>
+              <p class="text-sm text-graphite">Pengiriman aman dan tepat waktu ke seluruh area Jabodetabek.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian USP -->
+    <section id="usp" class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center px-6 py-3 bg-laser-green/10 border border-laser-green/20 rounded-full text-laser-green font-semibold text-sm mb-6">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Keunggulan Kami
+          </div>
+          <h2 class="heading-lg text-charcoal mb-8">Mengapa Memilih Jasa Kami?</h2>
+          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
+            Kami tidak hanya menawarkan jasa, kami memberikan jaminan kualitas, kecepatan, dan teknologi terdepan untuk setiap project Anda.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- USP 1: Teknologi -->
+          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
+            <h3 class="text-xl font-bold text-charcoal mb-3">Teknologi Fiber 12kW</h3>
+            <p class="text-graphite text-sm">Satu-satunya penyedia jasa dengan laser fiber 12kW di Jabodetabek, menjamin kecepatan dan presisi cutting metal hingga 20mm.</p>
+          </div>
+          <!-- USP 2: Garansi -->
+          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
+            <h3 class="text-xl font-bold text-charcoal mb-3">Garansi Kualitas</h3>
+            <p class="text-graphite text-sm">Kami memberikan garansi hasil cutting ulang GRATIS jika hasil tidak sesuai dengan spesifikasi yang disepakati.</p>
+          </div>
+          <!-- USP 3: Pengiriman -->
+          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
+            <h3 class="text-xl font-bold text-charcoal mb-3">Pengiriman Same-Day</h3>
+            <p class="text-graphite text-sm">Layanan pengiriman di hari yang sama tersedia untuk area Jakarta dan Tangerang (syarat & ketentuan berlaku).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding bg-silver-light">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="heading-lg text-charcoal mb-8">Estimasi Harga Transparan</h2>
+          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
+            Dapatkan gambaran biaya untuk project Anda. Harga final bergantung pada kompleksitas desain dan kuantitas.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-silver-mid/50">
+            <div class="space-y-6">
+              <!-- Example 1 -->
+              <div class="flex justify-between items-center pb-4 border-b border-silver-mid">
+                <div>
+                  <h3 class="font-bold text-charcoal">Cutting Stainless Steel 3mm</h3>
+                  <p class="text-sm text-graphite">Presisi tinggi untuk komponen industri</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-laser-green">Mulai Rp 15.000</p>
+                  <p class="text-xs text-graphite">/ meter</p>
+                </div>
+              </div>
+              <!-- Example 2 -->
+              <div class="flex justify-between items-center pb-4 border-b border-silver-mid">
+                <div>
+                  <h3 class="font-bold text-charcoal">Cutting Akrilik 5mm</h3>
+                  <p class="text-sm text-graphite">Untuk signage dan display bening</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-laser-green">Mulai Rp 10.000</p>
+                  <p class="text-xs text-graphite">/ meter</p>
+                </div>
+              </div>
+              <!-- Example 3 -->
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="font-bold text-charcoal">Cutting MDF 9mm</h3>
+                  <p class="text-sm text-graphite">Ideal untuk panel dekoratif dan furniture</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-bold text-laser-green">Mulai Rp 8.000</p>
+                  <p class="text-xs text-graphite">/ meter</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-8">
+              <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.quote)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                Dapatkan Quote Akurat Sekarang
+              </a>
+              <p class="text-xs text-graphite mt-4">*Harga dapat bervariasi sesuai kerumitan desain.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -201,68 +351,52 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
 
         <!-- Tombol Konsultasi untuk Material -->
         <div class="text-center mt-16">
-          <a href="/contact/" class="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
             </svg>
-            Konsultasi Material
+            Tanya Soal Material
           </a>
         </div>
       </div>
     </section>
 
     <!-- Bagian Portfolio -->
-    <section id="portfolio" class="section-padding bg-silver-light">
+    <section id="portfolio" class="section-padding bg-white">
       <div class="container-custom">
         <div class="text-center mb-20">
-          <div class="inline-flex items-center px-6 py-3 bg-laser-green/10 border border-laser-green/20 rounded-full text-laser-green font-semibold text-sm mb-6">
+          <div class="inline-flex items-center px-6 py-3 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-600 font-semibold text-sm mb-6">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
             </svg>
-            Hasil Karya Terbaik
+            Hasil Karya Terbukti
           </div>
-          <h2 class="heading-lg text-charcoal mb-8">Portfolio Proyek Kami</h2>
+          <h2 class="heading-lg text-charcoal mb-8">Portfolio Project Unggulan</h2>
           <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
-            Beberapa hasil karya terbaik kami yang telah dipercaya oleh berbagai klien di indonesia.
+            Kami telah membantu ratusan klien dari berbagai industri, mulai dari startup kreatif hingga korporasi besar, untuk mewujudkan visi mereka dengan presisi.
           </p>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PORTFOLIO.map((project, index) => (
-            <a href="/portfolio/" class="group relative block overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div class="relative overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {PORTFOLIO.map((project) => (
+            <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 flex flex-col overflow-hidden border border-silver-mid/50">
+              <a href="/portfolio/" class="block relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                  class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                   width="400"
-                  height="320"
+                  height="224"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/40 to-transparent"></div>
-                
-                <!-- Category Badge -->
-                <div class="absolute top-4 left-4">
-                  <span class="px-3 py-1 bg-laser-green text-white text-xs font-semibold rounded-full">
-                    {project.category}
-                  </span>
-                </div>
-                
-                <!-- Project Info -->
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 class="text-lg font-bold mb-2 group-hover:text-laser-green transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p class="text-sm text-silver-light mb-2">{project.material}</p>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs text-silver-mid">{project.service}</span>
-                    <svg class="w-5 h-5 text-laser-green group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
+              </a>
+              <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-purple-600 mb-2">{project.category}</span>
+                <h3 class="text-md font-bold text-charcoal mb-3 flex-grow">
+                  <a href="/portfolio/" class="hover:text-purple-600 transition-colors">{project.title}</a>
+                </h3>
+                <p class="text-sm text-graphite">{project.material}</p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
         
@@ -277,8 +411,23 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
       </div>
     </section>
 
+    <!-- Client Logos Section -->
+    <section id="clients" class="py-12 bg-white">
+      <div class="container-custom">
+        <h3 class="text-center text-charcoal font-semibold mb-8">Dipercaya oleh Perusahaan Terkemuka</h3>
+        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+          <!-- Placeholder Logos -->
+          <img src="https://via.placeholder.com/120x60.png?text=Client+A" alt="Client A Logo" class="h-12"/>
+          <img src="https://via.placeholder.com/120x60.png?text=Client+B" alt="Client B Logo" class="h-12"/>
+          <img src="https://via.placeholder.com/120x60.png?text=Client+C" alt="Client C Logo" class="h-12"/>
+          <img src="https://via.placeholder.com/120x60.png?text=Client+D" alt="Client D Logo" class="h-12"/>
+          <img src="https://via.placeholder.com/120x60.png?text=Client+E" alt="Client E Logo" class="h-12"/>
+        </div>
+      </div>
+    </section>
+
     <!-- Bagian Testimoni -->
-    <section id="testimonials" class="section-padding bg-white">
+    <section id="testimonials" class="section-padding bg-silver-light">
       <div class="container-custom">
         <div class="text-center mb-20">
           <div class="inline-flex items-center px-6 py-3 bg-charcoal/10 border border-charcoal/20 rounded-full text-charcoal font-semibold text-sm mb-6">
@@ -383,6 +532,44 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps Section -->
+    <section id="location" class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <h2 class="heading-lg text-charcoal mb-8">Lokasi Workshop Kami</h2>
+          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
+            Kunjungi workshop kami di Tangerang Selatan untuk konsultasi langsung atau melihat proses produksi.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://maps.google.com/maps?q=Jl.%20Bintaro%20Bsd%20no%201D%20parigi%20(%20samping%20Sekolah%20SD%20Mentari%20Internasional%20School%20),%20Tangerang%20Selatan,%20Banten,%20Indonesia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="bg-silver-light p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-charcoal mb-4">Alamat Kami</h3>
+            <p class="text-graphite mb-4">{SITE_CONFIG.address}</p>
+            <h3 class="text-xl font-bold text-charcoal mb-4 mt-6">Jam Operasional</h3>
+            <p class="text-graphite">{SITE_CONFIG.businessHours}</p>
+            <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=Halo,%20saya%20ingin%20bertanya%20alamat%20workshop.`}
+               target="_blank"
+               rel="noopener noreferrer"
+               class="mt-6 inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Hubungi Kami
+            </a>
+          </div>
         </div>
       </div>
     </section>

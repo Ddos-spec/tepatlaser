@@ -2,7 +2,7 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { MATERIALS, SERVICES } from '../utils/constants.js';
+import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
 
 const material = MATERIALS.find(m => m.id === 'mdf');
 const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
@@ -35,15 +35,15 @@ const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
                   target="_blank"
                   rel="noopener noreferrer"
                   class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-                  
+                  data-gtm-id="whatsapp-click"
                 >
                   Konsultasi Gratis
                 </a>
                 <a 
-                  href="/contact"
+                  href={`tel:${SITE_CONFIG.phone}`}
                   class="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                 >
-                  Request Quote
+                  Telepon Sekarang
                 </a>
               </div>
             </div>
