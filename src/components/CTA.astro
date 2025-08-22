@@ -111,7 +111,7 @@ const sizeClasses = getSizeClasses();
           target={primaryLink.startsWith('http') ? '_blank' : '_self'}
           rel={primaryLink.startsWith('http') ? 'noopener noreferrer' : ''}
           class={`
-            inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto
+            inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl w-full sm:w-auto
             ${primaryLink.includes('whatsapp')
               ? 'text-white bg-gradient-to-r from-laser-green to-laser-green-dark hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-laser-green-dark'
               : (variant === 'minimal'
