@@ -110,15 +110,15 @@ const sizeClasses = getSizeClasses();
           href={primaryLink}
           target={primaryLink.startsWith('http') ? '_blank' : '_self'}
           rel={primaryLink.startsWith('http') ? 'noopener noreferrer' : ''}
-          class={`
-            inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl w-full sm:w-auto
-            ${primaryLink.includes('whatsapp')
-              ? 'text-white bg-gradient-to-r from-laser-green to-laser-green-dark hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-laser-green-dark'
-              : (variant === 'minimal'
-                ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                : 'bg-white hover:bg-gray-100 text-blue-600 hover:text-blue-700')
-            }
-          `}
+          class={
+            primaryLink.includes('whatsapp')
+              ? "inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              : `inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg w-full sm:w-auto transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                  variant === 'minimal'
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                    : 'bg-white hover:bg-gray-100 text-blue-600 hover:text-blue-700'
+                }`
+          }
           data-gtm-id={primaryLink.includes('whatsapp') ? 'whatsapp-click' : undefined}
         >
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
