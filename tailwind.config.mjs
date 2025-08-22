@@ -30,7 +30,9 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
+        'laser-green': '#00FF7F',
+        'laser-green-dark': '#00E673',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
