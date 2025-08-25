@@ -52,4 +52,6 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
-            **/node_modules/** 
+            **/node_modules/**
+          # Force Active FTP Mode to bypass firewall issues
+          dangerous-ftp-active-mode: true
