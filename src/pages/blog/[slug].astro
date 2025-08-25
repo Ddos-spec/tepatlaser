@@ -3,6 +3,7 @@ import BaseLayout from '../../components/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
+import { generateBlogPostSchema } from '../../utils/seo.js';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -23,31 +24,11 @@ const relatedPosts = allPosts
   .filter(p => p.data.category === post.data.category && p.slug !== post.slug)
   .slice(0, 3);
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.data.title,
-  "description": post.data.excerpt,
-  "image": new URL(post.data.image, Astro.site).href,
-  "datePublished": post.data.publishDate,
-  "dateModified": post.data.publishDate,
-  "author": {
-    "@type": "Organization",
-    "name": "LaserCut Pro"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LaserCut Pro",
-    "logo": {
-      "@type": "ImageObject",
-      "url": new URL('logo-company.webp', Astro.site).href
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": new URL(`blog/${post.slug}`, Astro.site).href
-  }
-};
+// Generate the JSON-LD schema using the centralized function
+const jsonLd = generateBlogPostSchema({
+  ...post.data,
+  slug: post.slug, // Pass slug explicitly as it's not in post.data
+});
 ---
 
 <BaseLayout 
