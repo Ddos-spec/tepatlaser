@@ -402,19 +402,25 @@ export function generateServiceSchema(service) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    serviceType: service.name, // Added serviceType for more specificity
     name: service.name,
     description: service.description,
     keywords: serviceKeywords.join(', '),
-    provider: {
-      '@type': 'Organization',
+    brand: { // Added brand
+      '@type': 'Brand',
       name: SITE_CONFIG.name
     },
-    areaServed: [
-      'Jakarta',
-      'Bogor', 
-      'Depok',
-      'Tangerang',
-      'Bekasi'
+    provider: { // Enriched provider
+      '@type': 'Organization',
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url
+    },
+    areaServed: [ // Enriched areaServed
+      { "@type": "City", "name": "Jakarta" },
+      { "@type": "City", "name": "Bogor" },
+      { "@type": "City", "name": "Depok" },
+      { "@type": "City", "name": "Tangerang" },
+      { "@type": "City", "name": "Bekasi" }
     ],
     ...(service.image && {
       image: `${SITE_CONFIG.url}${service.image}`
@@ -446,6 +452,13 @@ export function generateBreadcrumbSchema(items) {
 }
 
 export function generateBlogPostSchema(post) {
+  // Helper to convert "9 menit" to ISO 8601 "PT9M"
+  const readTimeToISO = (timeString) => {
+    if (!timeString) return undefined;
+    const minutes = timeString.match(/\d+/);
+    return minutes ? `PT${minutes[0]}M` : undefined;
+  };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -453,10 +466,11 @@ export function generateBlogPostSchema(post) {
     description: post.excerpt,
     image: post.image ? `${SITE_CONFIG.url}${post.image}` : undefined,
     datePublished: post.publishDate,
-    dateModified: post.publishDate,
+    dateModified: post.publishDate, // Assuming no separate modified date for now
     author: {
       '@type': 'Organization',
-      name: SITE_CONFIG.name
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url
     },
     publisher: {
       '@type': 'Organization',
@@ -469,7 +483,9 @@ export function generateBlogPostSchema(post) {
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${SITE_CONFIG.url}/blog/${post.slug}`
-    }
+    },
+    isAccessibleForFree: true,
+    timeRequired: readTimeToISO(post.readTime)
   };
 }
 
