@@ -1,0 +1,24 @@
+---
+// src/components/Accordion.astro
+export interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+<details class="group border-b border-gray-200 py-4">
+  <summary class="flex justify-between items-center cursor-pointer list-none">
+    <span class="text-lg font-medium text-gray-900 group-open:text-blue-600">
+      {question}
+    </span>
+    <span class="transition-transform duration-300 transform group-open:rotate-180">
+      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </summary>
+  <div class="mt-4 text-gray-600 leading-relaxed">
+    <p>{answer}</p>
+  </div>
+</details>
