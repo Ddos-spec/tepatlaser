@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import CTA from '../components/CTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SERVICES, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
 import { generateMetaTags, generateServiceSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
@@ -31,18 +32,21 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
   { name: 'Jasa', url: '/#services' },
   { name: service.name, url: `/${service.slug}/` }
 ]) : null;
+
+const crumbs = breadcrumbSchema ? breadcrumbSchema.itemListElement : [];
 ---
 
 {service && metaTags ? (
   <BaseLayout {...metaTags} jsonLd={[serviceSchema, breadcrumbSchema].filter(Boolean)}>
     <Header slot="header" />
   
-    <main>
+    <main class="mt-16">
+      <Breadcrumbs crumbs={crumbs} />
       <Hero
         title={`${service.name} Profesional`}
         subtitle="Presisi 0.1mm | Material Kayu & MDF | Ukuran hingga 2x3 Meter"
         description="Teknologi CNC Router terdepan untuk cutting dan engraving material kayu, MDF, dan plastik dengan hasil sempurna. Cocok untuk furniture, signage, prototype, dan dekorasi."
-        primaryCTA="Konsultasi CNC Router"
+        primaryCTA={`Konsultasi Project ${service.name}`}
         secondaryCTA="Lihat Portofolio"
         backgroundImage={service.image}
         whatsappMessage={WHATSAPP_MESSAGES.cnc}
@@ -102,6 +106,7 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
                 alt={service.name}
                 class="rounded-xl shadow-xl w-full"
                 loading="lazy"
+                decoding="async"
               />
               <div class="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-6">
                 <div class="text-3xl font-bold text-blue-600 mb-1">0.1mm</div>
