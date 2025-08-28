@@ -2,10 +2,18 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
+import { generateProductSchema } from '../utils/seo.js';
 
 const material = MATERIALS.find(m => m.id === 'mdf');
 const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
+
+const crumbs = [
+  { name: 'Beranda', url: '/' },
+  { name: 'Material', url: '/#materials' },
+  { name: material?.name, url: `/${material?.slug}` }
+];
 ---
 
 {material ? (
@@ -14,10 +22,12 @@ const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
     description="Mencari jasa cutting MDF custom dengan harga potong laser MDF yang terjangkau? Tepat Laser memberikan hasil presisi untuk panel dinding, ornamen, dan furniture."
     keywords={material.keywords}
     image={material.image}
+    jsonLd={generateProductSchema(material)}
   >
     <Header slot="header" />
     
-    <main>
+    <main class="mt-16">
+      <Breadcrumbs crumbs={crumbs} />
       <section class="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 text-gray-900 py-20">
         <div class="absolute inset-0 bg-white/20"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,11 +47,12 @@ const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
                   class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   data-gtm-id="whatsapp-click"
                 >
-                  Konsultasi Gratis
+                  Konsultasi Project {material.name}
                 </a>
                 <a 
                   href={`tel:${SITE_CONFIG.phone}`}
                   class="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                  data-gtm-id="phone-click"
                 >
                   Telepon Sekarang
                 </a>
@@ -118,16 +129,16 @@ const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/mdf (4).webp" alt="Produksi Umum 1" class="w-full h-full object-cover"/>
+              <img src="/images/mdf (4).webp" alt="Produksi Umum 1" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/mdf (3).webp" alt="Produksi Umum 2" class="w-full h-full object-cover"/>
+              <img src="/images/mdf (3).webp" alt="Produksi Umum 2" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/mdf (2).webp" alt="Produksi Umum 3" class="w-full h-full object-cover"/>
+              <img src="/images/mdf (2).webp" alt="Produksi Umum 3" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/mdf (1).webp" alt="Produksi Umum 4" class="w-full h-full object-cover"/>
+              <img src="/images/mdf (1).webp" alt="Produksi Umum 4" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
           </div>
         </div>
@@ -208,6 +219,7 @@ const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
                     alt={recommendedService.name}
                     class="w-full h-64 object-cover rounded-lg"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

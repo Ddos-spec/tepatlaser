@@ -2,31 +2,14 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
+import { generateProductSchema } from '../utils/seo.js';
 
 const material = MATERIALS.find(m => m.id === 'metal');
 const recommendedService = SERVICES.find(s => s.id === 'laser-fiber');
 
-const jsonLd = material ? {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": material.name,
-  "description": material.description,
-  "category": "Laser Cutting Material",
-  "brand": {
-    "@type": "Brand",
-    "name": "Tepat Laser"
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "IDR",
-    "seller": {
-      "@type": "Organization",
-      "name": "Tepat Laser"
-    }
-  }
-} : null;
+const jsonLd = material ? generateProductSchema(material) : null;
 ---
 
 {material ? (
@@ -39,7 +22,12 @@ const jsonLd = material ? {
   >
     <Header slot="header" />
     
-    <main>
+    <main class="mt-16">
+      <Breadcrumbs crumbs={[
+        { name: 'Beranda', url: '/' },
+        { name: 'Material', url: '/#materials' },
+        { name: material.name, url: `/${material.slug}` }
+      ]} />
       <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white py-20">
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,11 +47,12 @@ const jsonLd = material ? {
                   class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   data-gtm-id="whatsapp-click"
                 >
-                  Konsultasi Gratis
+                  Konsultasi Project {material.name}
                 </a>
                 <a 
                   href={`tel:${SITE_CONFIG.phone}`}
                   class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+                  data-gtm-id="phone-click"
                 >
                   Telepon Sekarang
                 </a>
@@ -140,16 +129,16 @@ const jsonLd = material ? {
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/stainlesssteel (1).webp" alt="Produksi Umum 1" class="w-full h-full object-cover"/>
+              <img src="/images/stainlesssteel (1).webp" alt="Produksi Umum 1" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/stainlesssteel (2).webp" alt="Produksi Umum 2" class="w-full h-full object-cover"/>
+              <img src="/images/stainlesssteel (2).webp" alt="Produksi Umum 2" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/stainlesssteel (3).webp" alt="Produksi Umum 3" class="w-full h-full object-cover"/>
+              <img src="/images/stainlesssteel (3).webp" alt="Produksi Umum 3" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
             <div class="w-full h-[200px] rounded-lg shadow-md overflow-hidden">
-              <img src="/images/stainlesssteel (4).webp" alt="Produksi Umum 4" class="w-full h-full object-cover"/>
+              <img src="/images/stainlesssteel (4).webp" alt="Produksi Umum 4" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
             </div>
           </div>
         </div>
@@ -231,6 +220,7 @@ const jsonLd = material ? {
                     alt={recommendedService.name}
                     class="w-full h-64 object-cover rounded-lg"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

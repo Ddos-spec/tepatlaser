@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import CTA from '../components/CTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SERVICES, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
 import { generateMetaTags, generateServiceSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
@@ -31,18 +32,21 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
   { name: 'Jasa', url: '/#services' },
   { name: service.name, url: `/${service.slug}/` }
 ]) : null;
+
+const crumbs = breadcrumbSchema ? breadcrumbSchema.itemListElement : [];
 ---
 
 {service && metaTags ? (
   <BaseLayout {...metaTags} jsonLd={[serviceSchema, breadcrumbSchema].filter(Boolean)}>
     <Header slot="header" />
   
-    <main>
+    <main class="mt-16">
+      <Breadcrumbs crumbs={crumbs} />
       <Hero
         title={`${service.name} Profesional`}
         subtitle="Engraving Presisi | Logam, Plastik, Kayu | Kecepatan Tinggi"
         description="Teknologi galvo laser tercepat untuk engraving detail tinggi pada berbagai material. Ideal untuk branding produk, serial number, QR code, barcode, dan personalisasi dengan hasil yang tajam dan tahan lama."
-        primaryCTA="Konsultasi Galvo Engraving"
+        primaryCTA={`Konsultasi Project ${service.name}`}
         secondaryCTA="Lihat Portofolio"
         backgroundImage={service.image}
         whatsappMessage={WHATSAPP_MESSAGES.engraving}
@@ -57,6 +61,7 @@ const breadcrumbSchema = service ? generateBreadcrumbSchema([
                 alt={service.name}
                 class="rounded-xl shadow-xl w-full"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="order-1 lg:order-2">
