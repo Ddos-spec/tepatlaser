@@ -4,30 +4,33 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
-import { generateProductSchema } from '../utils/seo.js';
+import { generateProductSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
 const material = MATERIALS.find(m => m.id === 'acp');
 const recommendedService = SERVICES.find(s => s.id === 'cnc-router');
 
-const jsonLd = material ? generateProductSchema(material) : null;
+const meta = {
+  title: `${material.name} - Material Laser Cutting Premium`,
+  description: material.description,
+  keywords: material.keywords,
+  image: material.image,
+  jsonLd: [
+    generateProductSchema(material),
+    generateBreadcrumbSchema([
+      { name: 'Beranda', url: '/' },
+      { name: 'Material', url: '/#materials' },
+      { name: material.name, url: `/${material.slug}` }
+    ])
+  ].filter(Boolean)
+};
 ---
 
 {material ? (
-  <BaseLayout 
-    title={`${material.name} - Material Laser Cutting Premium`}
-    description={material.description}
-    keywords={material.keywords}
-    image={material.image}
-    jsonLd={jsonLd}
-  >
+  <BaseLayout {...meta}>
     <Header slot="header" />
     
     <main class="mt-16">
-      <Breadcrumbs crumbs={[
-        { name: 'Beranda', url: '/' },
-        { name: 'Material', url: '/#materials' },
-        { name: material.name, url: `/${material.slug}` }
-      ]} />
+      <Breadcrumbs crumbs={meta.jsonLd.find(s => s.type === 'BreadcrumbList')?.itemListElement || []} />
       <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

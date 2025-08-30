@@ -4,26 +4,31 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
-import { generateProductSchema } from '../utils/seo.js';
+import { generateProductSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
 const material = MATERIALS.find(m => m.id === 'mdf');
 const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
 
-const crumbs = [
-  { name: 'Beranda', url: '/' },
-  { name: 'Material', url: '/#materials' },
-  { name: material?.name, url: `/${material?.slug}` }
-];
+const meta = {
+  title: "Jasa Cutting MDF Custom | Harga Potong Laser MDF Terbaik",
+  description: "Mencari jasa cutting MDF custom dengan harga potong laser MDF yang terjangkau? Tepat Laser memberikan hasil presisi untuk panel dinding, ornamen, dan furniture.",
+  keywords: material.keywords,
+  image: material.image,
+  jsonLd: [
+    generateProductSchema(material),
+    generateBreadcrumbSchema([
+      { name: 'Beranda', url: '/' },
+      { name: 'Material', url: '/#materials' },
+      { name: material.name, url: `/${material.slug}` }
+    ])
+  ].filter(Boolean)
+};
+
+const crumbs = meta.jsonLd.find(s => s.type === 'BreadcrumbList')?.itemListElement || [];
 ---
 
 {material ? (
-  <BaseLayout 
-    title="Jasa Cutting MDF Custom | Harga Potong Laser MDF Terbaik"
-    description="Mencari jasa cutting MDF custom dengan harga potong laser MDF yang terjangkau? Tepat Laser memberikan hasil presisi untuk panel dinding, ornamen, dan furniture."
-    keywords={material.keywords}
-    image={material.image}
-    jsonLd={generateProductSchema(material)}
-  >
+  <BaseLayout {...meta}>
     <Header slot="header" />
     
     <main class="mt-16">

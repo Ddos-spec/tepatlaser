@@ -1,29 +1,6 @@
 import { SITE_CONFIG } from './constants.js';
 
-/**
- * @param {object} params
- * @param {string} params.title
- * @param {string} params.description
- * @param {string} params.keywords
- * @param {string} [params.image]
- * @param {string} params.url
- * @param {string} [params.type='website']
- * @param {string} [params.publishedTime]
- * @param {string} [params.modifiedTime]
- * @param {string} [params.author]
- */
-/**
- * @typedef {object} MetaTags
- * @property {string} title
- * @property {string} description
- * @property {string} keywords
- * @property {string} [image]
- * @property {string} url
- * @property {string} [type]
- * @property {string} [publishedTime]
- * @property {string} [modifiedTime]
- * @property {string} [author]
- */
+
 
 // TOP PERFORMING KEYWORDS - Based on real data analysis
 const TOP_KEYWORDS = {
@@ -122,49 +99,7 @@ const TOP_KEYWORDS = {
  * @param {string} [params.author]
  * @returns {MetaTags}
  */
-export function generateMetaTags({ title, description, keywords, image, url, type = 'website', publishedTime, modifiedTime, author } = {}) {
-  // FIX: Menggunakan SITE_CONFIG.url dari astro.config.mjs, bukan dari constants.js
-  const baseUrl = SITE_CONFIG.url; // Ini akan di-override oleh Astro.site
-  const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.title;
-  const fullDescription = description || SITE_CONFIG.description;
-  // URL sekarang akan absolut dan benar, dibangun oleh BaseLayout.astro
-  const fullUrl = url;
-  const fullImage = image;
-  
-  const defaultKeywords = [
-    'jasa grafir laser', 'custom acrylic', 'jasa ukir laser',
-    'laser cut maket', 'laser cutting kayu', 'cnc cutting laser'
-  ].join(', ');
-  
-  const siteKeywords = SITE_CONFIG.keywords || defaultKeywords;
-  const fullKeywords = keywords ? `${keywords}, ${siteKeywords}` : siteKeywords;
 
-  return {
-    title: fullTitle,
-    description: fullDescription,
-    keywords: fullKeywords,
-    url: fullUrl,
-    type: type,
-    openGraph: {
-      title: fullTitle,
-      description: fullDescription,
-      url: fullUrl,
-      image: fullImage,
-      type: type,
-      siteName: SITE_CONFIG.name,
-      locale: 'id_ID',
-      ...(publishedTime && { publishedTime }),
-      ...(modifiedTime && { modifiedTime }),
-      ...(author && { author })
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: fullTitle,
-      description: fullDescription,
-      image: fullImage
-    }
-  };
-}
 
 // Enhanced function to get keywords by category
 export function getKeywordsByCategory(category = 'all') {

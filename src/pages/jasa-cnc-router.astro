@@ -7,37 +7,34 @@ import Hero from '../components/Hero.astro';
 import CTA from '../components/CTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SERVICES, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
-import { generateMetaTags, generateServiceSchema, generateBreadcrumbSchema } from '../utils/seo.js';
+import { generateServiceSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
 // Find CNC Router service
 const service = SERVICES.find(s => s.slug === 'jasa-cnc-router');
 
-// SEO Meta Tags
-const metaTags = service ? generateMetaTags({
+// SEO Meta Tags & Structured Data
+const meta = {
   title: `${service.name} - Presisi Tinggi untuk Material Kayu & MDF`,
   description: `${service.description}. Teknologi CNC Router terdepan dengan presisi 0.1mm. Melayani cutting kayu, MDF, dan plastik hingga ukuran 2x3 meter. Quote gratis 24 jam.`,
   keywords: service.keywords,
   url: `/${service.slug}/`,
-  type: "service",
+  type: "article",
   image: service.image,
-  publishedTime: "2025-01-01T00:00:00Z",
-  modifiedTime: "2025-07-27T10:00:00Z",
-  author: SITE_CONFIG.author
-} as { title: string; description: string; keywords: string; url: string; type: string; image: string; publishedTime: string; modifiedTime: string; author: string }) : null;
+  jsonLd: [
+    generateServiceSchema(service),
+    generateBreadcrumbSchema([
+      { name: 'Beranda', url: '/' },
+      { name: 'Jasa', url: '/#services' },
+      { name: service.name, url: `/${service.slug}/` }
+    ])
+  ].filter(Boolean)
+};
 
-// Structured Data
-const serviceSchema = service ? generateServiceSchema(service) : null;
-const breadcrumbSchema = service ? generateBreadcrumbSchema([
-  { name: 'Beranda', url: '/' },
-  { name: 'Jasa', url: '/#services' },
-  { name: service.name, url: `/${service.slug}/` }
-]) : null;
-
-const crumbs = breadcrumbSchema ? breadcrumbSchema.itemListElement : [];
+const crumbs = meta.jsonLd.find(s => s.type === 'BreadcrumbList')?.itemListElement || [];
 ---
 
-{service && metaTags ? (
-  <BaseLayout {...metaTags} jsonLd={[serviceSchema, breadcrumbSchema].filter(Boolean)}>
+{service ? (
+  <BaseLayout {...meta}>
     <Header slot="header" />
   
     <main class="mt-16">

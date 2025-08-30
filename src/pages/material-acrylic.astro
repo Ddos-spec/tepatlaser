@@ -4,30 +4,33 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { MATERIALS, SERVICES, SITE_CONFIG } from '../utils/constants.js';
-import { generateProductSchema } from '../utils/seo.js';
+import { generateProductSchema, generateBreadcrumbSchema } from '../utils/seo.js';
 
 const material = MATERIALS.find(m => m.id === 'acrylic');
 const recommendedService = SERVICES.find(s => s.id === 'laser-co2');
 
-const jsonLd = material ? generateProductSchema(material) : null;
+const meta = {
+  title: "Harga Laser Cutting Akrilik | Jasa Potong Akrilik Custom",
+  description: "Dapatkan harga laser cutting akrilik terbaik di Tepat Laser. Kami menyediakan jasa potong akrilik custom untuk signage, display, dan berbagai kebutuhan dengan presisi tinggi.",
+  keywords: material.keywords,
+  image: material.image,
+  jsonLd: [
+    generateProductSchema(material),
+    generateBreadcrumbSchema([
+      { name: 'Beranda', url: '/' },
+      { name: 'Material', url: '/#materials' },
+      { name: material.name, url: `/${material.slug}` }
+    ])
+  ].filter(Boolean)
+};
 ---
 
 {material ? (
-  <BaseLayout 
-    title="Harga Laser Cutting Akrilik | Jasa Potong Akrilik Custom"
-    description="Dapatkan harga laser cutting akrilik terbaik di Tepat Laser. Kami menyediakan jasa potong akrilik custom untuk signage, display, dan berbagai kebutuhan dengan presisi tinggi."
-    keywords={material.keywords}
-    image={material.image}
-    jsonLd={jsonLd}
-  >
+  <BaseLayout {...meta}>
     <Header slot="header" />
     
     <main class="mt-16">
-      <Breadcrumbs crumbs={[
-        { name: 'Beranda', url: '/' },
-        { name: 'Material', url: '/#materials' },
-        { name: material.name, url: `/${material.slug}` }
-      ]} />
+      <Breadcrumbs crumbs={meta.jsonLd.find(s => s.type === 'BreadcrumbList')?.itemListElement || []} />
       <section class="relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white py-20">
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +64,7 @@ const jsonLd = material ? generateProductSchema(material) : null;
             <div class="relative">
               <img 
                 src={material.image} 
-                alt="Contoh hasil presisi dari jasa laser cutting akrilik"
+                alt="Hasil jasa cutting MDF custom untuk panel dinding dekoratif"
                 class="w-full h-96 object-cover rounded-lg shadow-2xl"
                 loading="eager"
               />

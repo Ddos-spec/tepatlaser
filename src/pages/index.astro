@@ -15,12 +15,12 @@ import CTA from '../components/CTA.astro';
 import { SERVICES, MATERIALS, TESTIMONIALS, PORTFOLIO, FAQ, SITE_CONFIG, WHATSAPP_MESSAGES } from '../utils/constants.js';
 
 // Import fungsi-fungsi SEO dari seo.ts
-import { generateMetaTags, generateFAQSchema, generateReviewSchema } from '../utils/seo.js';
+import { generateFAQSchema, generateReviewSchema } from '../utils/seo.js';
 
 // 1. GENERATE META TAGS
 // Semua meta tags (title, description, OG, Twitter card) dibuat secara dinamis
 // menggunakan fungsi generateMetaTags. Cukup isi data di bawah, sisanya diurus seo.ts.
-const metaTags = generateMetaTags({
+const meta = {
   title: "Jasa Laser Fiber Jabodetabek | Cutting Metal Presisi hingga 20mm",
   description: "Jasa laser fiber cutting metal terpercaya di Jakarta-Tangerang. Stainless steel, carbon steel, aluminium. Toleransi ±0.1mm, garansi kualitas. Quote gratis 24 jam!",
   keywords: "jasa laser fiber, laser cutting jabodetabek, cutting metal presisi, laser cutting jakarta, laser cutting tangerang",
@@ -30,7 +30,7 @@ const metaTags = generateMetaTags({
   publishedTime: "2025-01-01T00:00:00Z",
   modifiedTime: "2025-07-27T10:00:00Z", // Update tanggal modifikasi terakhir
   author: SITE_CONFIG.author
-} as { title: string; description: string; keywords: string; url: string; type: string; image: string; publishedTime: string; modifiedTime: string; author: string });
+};
 
 // 2. GENERATE STRUCTURED DATA (JSON-LD)
 // Schema untuk FAQ dan Review juga digenerate dari seo.ts untuk hasil SEO yang lebih kaya.
@@ -39,10 +39,10 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
 ---
 
 <BaseLayout
-  title={metaTags.title}
-  description={metaTags.description}
-  keywords={metaTags.keywords}
-  url={metaTags.url}
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  url={meta.url}
   jsonLd={[faqSchema, reviewSchema]}
 >
   <Header slot="header" />
@@ -130,178 +130,6 @@ const reviewSchema = generateReviewSchema(TESTIMONIALS);
         <div class="text-center mt-16">
           <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300" data-gtm-id="whatsapp-click">
             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-            Chat via WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bagian "How It Works" -->
-    <section id="how-it-works" class="section-padding bg-silver-light">
-      <div class="container-custom">
-        <div class="text-center mb-20">
-          <div class="inline-flex items-center px-6 py-3 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-600 font-semibold text-sm mb-6">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-            Proses Kerja Kami
-          </div>
-          <h2 class="heading-lg text-charcoal mb-8">Proses Laser Cutting Terstruktur</h2>
-          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
-            Dari konsultasi hingga pengiriman, kami memastikan setiap langkah dilakukan dengan presisi dan transparansi untuk hasil terbaik.
-          </p>
-        </div>
-        <div class="relative">
-          <!-- Connector Line -->
-          <div class="absolute top-1/2 left-0 w-full h-0.5 bg-silver-mid hidden md:block"></div>
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-            <!-- Step 1: Konsultasi -->
-            <div class="text-center flex flex-col items-center">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
-                <span class="text-3xl font-bold text-blue-600">1</span>
-              </div>
-              <h3 class="text-lg font-bold text-charcoal mb-2">Konsultasi & Desain</h3>
-              <p class="text-sm text-graphite">Diskusikan kebutuhan project Anda dan finalisasi desain bersama tim ahli kami.</p>
-            </div>
-            <!-- Step 2: Quote -->
-            <div class="text-center flex flex-col items-center">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
-                <span class="text-3xl font-bold text-blue-600">2</span>
-              </div>
-              <h3 class="text-lg font-bold text-charcoal mb-2">Penawaran Harga</h3>
-              <p class="text-sm text-graphite">Kami memberikan penawaran harga yang transparan dan kompetitif.</p>
-            </div>
-            <!-- Step 3: Produksi -->
-            <div class="text-center flex flex-col items-center">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
-                <span class="text-3xl font-bold text-blue-600">3</span>
-              </div>
-              <h3 class="text-lg font-bold text-charcoal mb-2">Produksi Presisi</h3>
-              <p class="text-sm text-graphite">Proses cutting menggunakan mesin laser fiber tercanggih untuk hasil akurat.</p>
-            </div>
-            <!-- Step 4: Quality Control -->
-            <div class="text-center flex flex-col items-center">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
-                <span class="text-3xl font-bold text-blue-600">4</span>
-              </div>
-              <h3 class="text-lg font-bold text-charcoal mb-2">Quality Control</h3>
-              <p class="text-sm text-graphite">Setiap hasil produksi melewati tahap QC ketat untuk memastikan sesuai spesifikasi.</p>
-            </div>
-            <!-- Step 5: Pengiriman -->
-            <div class="text-center flex flex-col items-center">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-silver-light z-10 mb-4">
-                <span class="text-3xl font-bold text-blue-600">5</span>
-              </div>
-              <h3 class="text-lg font-bold text-charcoal mb-2">Pengiriman Cepat</h3>
-              <p class="text-sm text-graphite">Pengiriman aman dan tepat waktu ke seluruh area Jabodetabek.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bagian USP -->
-    <section id="usp" class="section-padding bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-20">
-          <div class="inline-flex items-center px-6 py-3 bg-laser-green/10 border border-laser-green/20 rounded-full text-laser-green font-semibold text-sm mb-6">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            Keunggulan Kami
-          </div>
-          <h2 class="heading-lg text-charcoal mb-8">Mengapa Memilih Jasa Kami?</h2>
-          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
-            Kami tidak hanya menawarkan jasa, kami memberikan jaminan kualitas, kecepatan, dan teknologi terdepan untuk setiap project Anda.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- USP 1: Teknologi -->
-          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
-            <h3 class="text-xl font-bold text-charcoal mb-3">Teknologi Fiber 12kW</h3>
-            <p class="text-graphite text-sm">Satu-satunya penyedia jasa dengan laser fiber 12kW di Jabodetabek, menjamin kecepatan dan presisi cutting metal hingga 20mm.</p>
-          </div>
-          <!-- USP 2: Garansi -->
-          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
-            <h3 class="text-xl font-bold text-charcoal mb-3">Garansi Kualitas</h3>
-            <p class="text-graphite text-sm">Kami memberikan garansi hasil cutting ulang GRATIS jika hasil tidak sesuai dengan spesifikasi yang disepakati.</p>
-          </div>
-          <!-- USP 3: Pengiriman -->
-          <div class="bg-silver-light p-8 rounded-2xl text-center shadow-lg">
-            <h3 class="text-xl font-bold text-charcoal mb-3">Pengiriman Same-Day</h3>
-            <p class="text-graphite text-sm">Layanan pengiriman di hari yang sama tersedia untuk area Jakarta dan Tangerang (syarat & ketentuan berlaku).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Bagian Material -->
-    <section id="materials" class="section-padding bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-20">
-          <div class="inline-flex items-center px-6 py-3 bg-charcoal/10 border border-charcoal/20 rounded-full text-charcoal font-semibold text-sm mb-6">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-            </svg>
-            Material Premium
-          </div>
-          <h2 class="heading-lg text-charcoal mb-8">Material Pilihan Terbaik</h2>
-          <p class="text-xl text-graphite max-w-4xl mx-auto leading-relaxed">
-            Kami memproses berbagai jenis material kualitas premium dengan hasil cutting yang presisi dan rapi.
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {MATERIALS.slice(0, 6).map((material, index) => (
-            <div class="group bg-silver-light rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-silver-mid/50">
-              <div class="relative overflow-hidden">
-                <img
-                  src={material.image}
-                  alt={`Jasa laser cutting material ${material.name}`}
-                  class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="208"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute top-4 right-4">
-                  <div class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-5 h-5 text-laser-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="p-8">
-                <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-laser-green transition-colors duration-300">
-                  {material.name}
-                </h3>
-                <p class="text-graphite mb-4 text-sm leading-relaxed">
-                  {material.description}
-                </p>
-                
-                <!-- Thickness Info -->
-                <div class="flex items-center justify-between mb-6 p-3 bg-white rounded-lg border border-silver-mid/50">
-                  <span class="text-sm font-medium text-graphite">Ketebalan:</span>
-                  <span class="text-sm font-bold text-charcoal">{material.thickness}</span>
-                </div>
-                
-                <a href={`/${material.slug}/`} 
-                   class="group/link inline-flex items-center font-semibold text-charcoal hover:text-laser-green transition-all duration-300">
-                  <span class="group-hover/link:translate-x-1 transition-transform duration-300">Info Selengkapnya</span>
-                  <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <!-- Tombol Konsultasi untuk Material -->
-        <div class="text-center mt-16">
-          <a href={`https://api.whatsapp.com/send?phone=${SITE_CONFIG.whatsapp}&text=${encodeURIComponent(WHATSAPP_MESSAGES.default)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:from-orange-600 hover:to-red-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-300" data-gtm-id="whatsapp-click">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-            </svg>
             Tanya Soal Material
           </a>
         </div>

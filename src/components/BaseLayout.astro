@@ -148,6 +148,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <slot name="footer" />
 
+  <script is:inline>
+    import { initializeEnhancedConversionTracking } from '../utils/tracking.js';
+    initializeEnhancedConversionTracking();
+  </script>
+
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBR27KH7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
